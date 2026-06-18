@@ -37,14 +37,31 @@
     filter: saturate(200%);
 }
 
+/* MENU PRINCIPAL */
+
+body {
+  background-color: var(--color-body);
+  width: var(--ancho-pantalla);
+}
+
+.menu-group {
+  margin-bottom: 20px;
+}
+
+.menu-group a {
+  display: block;
+  margin-left: 20px;
+  color: var(--color-body);
+}
+
 /* ESTILOS DE BARRA DE NAVEGACIÓN */
 .main-menu{
     float: left;
     width: var(--ancho-nav);
     padding: 0px 10px;
     position: relative;
-    top: 10;
-    left: 0;
+    top: 10px;
+    left: 0px;
     background-color: var(--colorHeaderNav);
     overflow-y: visible  
 }
