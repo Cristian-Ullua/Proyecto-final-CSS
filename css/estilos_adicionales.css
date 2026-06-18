@@ -1,6 +1,6 @@
 /***********************************************
-
- Autores: Integrante 1 - Integrante 2
+ GRUPO N° 33
+ Autores: YANINA VELAZQUE - ULLUA CRISTIAN
 
 ***********************************************/
 
@@ -8,21 +8,49 @@
 
 /* ESTILOS GENERALES*/
 
+:root {
+  --colorHeaderNav: #0a0a0a;
+  --color-body: #f5f5f5;
+  --color-resaltado: #c9a646;
+  --color-texto-header: #ffffff;
+  --color-section: #1c1c1c;
+  --color-cards: #2e3a4f;
+
+  --ancho-pantalla: 1000px;
+  --ancho-nav: 220px;
+}
 
 /* ESTILOS DE CABECERA PRINCIPAL*/
 .main-header{
-    background-color: blue;
+    width: var(--ancho-pantalla);
+    display: flex;
+    position: relative;
+    background-color: var(--colorHeaderNav);
+    border: 1px solid var(--color-body);
+    z-index: 10;
 }
 .main-header img{
+    position: relative;
+    margin-left: 5%;
     height: 100%;
+    order: 1;
+    filter: saturate(200%);
 }
+
 /* ESTILOS DE BARRA DE NAVEGACIÓN */
 .main-menu{
-    background-color: red;   
+    float: left;
+    width: var(--ancho-nav);
+    padding: 0px 10px;
+    position: relative;
+    top: 10;
+    left: 0;
+    background-color: var(--colorHeaderNav);
+    overflow-y: visible  
 }
 main section{
     padding: 3px;
-    background-color: green;
+    background-color: var(--color-section);
 }
 
 /* PLANTILLA DE PRODUCTOS */
