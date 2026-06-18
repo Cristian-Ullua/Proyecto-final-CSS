@@ -7,7 +7,6 @@
 /* ORGANIZAR LAS DECLARACIONES EN BLOQUES*/
 
 /* ESTILOS GENERALES*/
-
 :root {
   --colorHeaderNav: #0a0a0a;
   --color-body: #f5f5f5;
@@ -20,7 +19,7 @@
   --ancho-nav: 220px;
 }
 
-/* ESTILOS DE CABECERA PRINCIPAL*/
+/* ESTILOS DE CABECERA PRINCIPAL*/ 
 .main-header{
   width: var(--ancho-pantalla);
   display: flex;
@@ -56,8 +55,8 @@
   order: 3;
 }
 
-/* ESTILO DEL CUERPO Y EL MENU PRINCIPAL */
 
+/* ESTILO DEL CUERPO Y EL MENU PRINCIPAL */
 body {
   background-color: var(--color-body);
   width: var(--ancho-pantalla);
@@ -84,8 +83,8 @@ body {
   margin-right: 5px;
 }
 
-/* ESTILOS DE BARRA DE NAVEGACIÓN */
 
+/* ESTILOS DE BARRA DE NAVEGACIÓN */
 .main-menu{
     float: left;
     width: var(--ancho-nav);
@@ -112,6 +111,8 @@ main section{
     background-color: var(--color-section);
 }
 
+
+/* ESTILOS DE ENLACES */
 a {
   padding: 3px 0;
   display: flex;
@@ -136,8 +137,8 @@ a:hover .material-icons {
   color: var(--color-texto-header);
 }
 
-/* CAJAS DE PRODUCTOS Y OFERTAS */
 
+/* ESTILOS DE CAJAS DE PRODUCTOS Y OFERTAS */
 .exclusive-offers {
   display: flex;
   flex-wrap: nowrap;
@@ -148,16 +149,16 @@ a:hover .material-icons {
   border: 1px solid var(--color-body);
 }
 
-/* TAMAÑO DE IMAGENES DE CAJAS */
 
+/* ESTILO DE TAMAÑO DE IMAGENES DE LAS CAJAS */
 .art-offer {
   margin-top: 30px;
   background-color: var(--color-body);
   border: solid 3px var(--color-section);
 }
 
-/* PLANTILLA DE PRODUCTOS */
 
+/* ESTILO DE PLANTILLA DE PRODUCTOS */
 .card{
     display: flex;
     width: 382px;
@@ -165,8 +166,8 @@ a:hover .material-icons {
     border: 3px solid var(--color-body);
 }
 
-/* ACTIVIDAD RECIENTE */
 
+/* ESTILO DE ACTIVIDAD RECIENTE */
 .activity {
   background-color: var(--color-section);
   width: 398px;
@@ -174,8 +175,8 @@ a:hover .material-icons {
   border: 3px solid var(--color-body);
 }
 
-/*TARJETAS*/
 
+/* ESTILO DE TARJETAS*/
 .cards {
   display: flex;
   width: 382px;
@@ -183,8 +184,8 @@ a:hover .material-icons {
   border: 3px solid var(--color-body);
 }
 
-/* CONTROL DE STOCK */
 
+/* ESTILO DE CONTROL DE STOCK */
 .stock-control{
     width: 398px;
     height: 265px;
@@ -199,8 +200,8 @@ a:hover .material-icons {
     height: 60px;
 }
 
-/* COTIZACION DOLAR */
 
+/* ESTILO DE COTIZACION DOLAR */
 .currency {
   width: 380px;
   height: 265px;
@@ -252,8 +253,8 @@ a:hover .material-icons {
     font-weight: bold;
 }
 
-/* FOOTER */
 
+/* ESTILO DE FOOTER */
 .main-footer{
     width: var(--ancho-pantalla);
     background-color: var(--color-section);
@@ -263,5 +264,3 @@ a:hover .material-icons {
     bottom: 0px;
     border-top: 3px solid var(--color-body);
 }
-
-/* ESTILOS DE ...*/
