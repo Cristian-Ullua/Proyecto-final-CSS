@@ -22,20 +22,38 @@
 
 /* ESTILOS DE CABECERA PRINCIPAL*/
 .main-header{
-    width: var(--ancho-pantalla);
-    display: flex;
-    position: relative;
-    background-color: var(--colorHeaderNav);
-    border: 1px solid var(--color-body);
-    z-index: 10;
+  width: var(--ancho-pantalla);
+  display: flex;
+  position: relative;
+  background-color: var(--colorHeaderNav);
+  border: 1px solid var(--color-body);
+  z-index: 10;
 }
 
 .main-header img{
-    position: relative;
-    margin-left: 5%;
-    height: 100%;
-    order: 1;
-    filter: saturate(200%);
+  position: relative;
+  margin-left: 5%;
+  height: 100%;
+  order: 1;
+  filter: saturate(200%);
+}
+
+.main-header>h1 {
+  position: absolute;
+  margin-left: 40%;
+  color: var(--color-texto-header);
+  align-self: center;
+  order: 2;
+}
+
+.notifications {
+  position: absolute;
+  top: 40%;
+  padding: 11px;
+  right: 1px;
+  justify-content: center;
+  color: var(--color-texto-header);
+  order: 3;
 }
 
 /* ESTILO DEL CUERPO Y EL MENU PRINCIPAL */
@@ -49,10 +67,21 @@ body {
   margin-bottom: 20px;
 }
 
+.menu-group>h2 {
+  padding-top: 8px;
+  padding-left: 25px;
+  font-size: 25px;
+  color: var(--color-body);
+}
+
 .menu-group a {
   display: block;
   margin-left: 20px;
   color: var(--color-body);
+}
+
+.menu-group a .material-icons {
+  margin-right: 5px;
 }
 
 /* ESTILOS DE BARRA DE NAVEGACIÓN */
@@ -102,6 +131,24 @@ main section{
     border: 3px solid var(--color-body);
 }
 
+/* ACTIVIDAD RECIENTE */
+
+.activity {
+  background-color: var(--color-section);
+  width: 398px;
+  height: 220px;
+  border: 3px solid var(--color-body);
+}
+
+/*TARJETAS*/
+
+.cards {
+  display: flex;
+  width: 382px;
+  height: 220px;
+  border: 3px solid var(--color-body);
+}
+
 /* CONTROL DE STOCK */
 
 .stock-control{
@@ -119,6 +166,17 @@ main section{
 }
 
 /* COTIZACION DOLAR */
+
+.currency {
+  width: 380px;
+  height: 265px;
+  font-size: 1.2rem;
+  color: var(--colorHeaderNav);
+  text-align: center;
+  margin-left: 2px;
+  background-color: var(--color-body);
+  border: 3px solid var(--color-section);
+}
 
 .loading{
     width: 200px;
