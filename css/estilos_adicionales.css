@@ -97,9 +97,43 @@ body {
     overflow-y: visible  
 }
 
+.material-icons {
+  margin-right: 3px;
+}
+
+main {
+  width: calc(var(--ancho-pantalla) - var(--ancho-nav));
+  background-color: var(--color-texto-header);
+  justify-content: flex-end;
+}
+
 main section{
     padding: 3px;
     background-color: var(--color-section);
+}
+
+a {
+  padding: 3px 0;
+  display: flex;
+  color: var(--color-texto-header);
+  text-decoration: none;
+}
+
+a>.menu-text {
+  color: var(--color-texto-header);
+  font-size: 15px;
+}
+
+a:hover {
+  background-color: var(--color-resaltado);
+}
+
+a:hover .menu-text {
+  color: var(--color-texto-header);
+}
+
+a:hover .material-icons {
+  color: var(--color-texto-header);
 }
 
 /* CAJAS DE PRODUCTOS Y OFERTAS */
