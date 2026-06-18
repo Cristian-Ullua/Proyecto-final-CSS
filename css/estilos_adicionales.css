@@ -85,6 +85,17 @@ body {
 
 
 /* ESTILOS DE BARRA DE NAVEGACIÓN */
+main {
+  width: calc(var(--ancho-pantalla) - var(--ancho-nav));
+  background-color: var(--color-texto-header);
+  justify-content: flex-end;
+}
+
+main section{
+    padding: 3px;
+    background-color: var(--color-section);
+}
+
 .main-menu{
     float: left;
     width: var(--ancho-nav);
@@ -98,17 +109,6 @@ body {
 
 .material-icons {
   margin-right: 3px;
-}
-
-main {
-  width: calc(var(--ancho-pantalla) - var(--ancho-nav));
-  background-color: var(--color-texto-header);
-  justify-content: flex-end;
-}
-
-main section{
-    padding: 3px;
-    background-color: var(--color-section);
 }
 
 
@@ -157,6 +157,68 @@ a:hover .material-icons {
   border: solid 3px var(--color-section);
 }
 
+.art-offer header {
+  margin-bottom: 15px;
+}
+
+.art-offer>header>p {
+  margin: 5px;
+  font-size: 30px;
+  font-weight: bold;
+  color: #333;
+}
+
+.art-offer>header>p::before {
+  content: attr(data-art-old-price);
+  margin: 5px;
+  font-size: 20px;
+  text-decoration: line-through;
+  color: var(--color-resaltado);
+}
+
+.art-offer h3 {
+  margin: 10px;
+  font-size: 19px;
+  text-align: center;
+  height: 55px;
+  font-weight: bold;
+}
+
+.art-offer>img {
+  width: 120px;
+  height: 120px;
+}
+
+.art-details{
+  height: 70px;  
+  background-color: var(--color-body);
+}
+
+.art-details>h4 {
+  font-size: x-small;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.art-details>p {
+  margin-top: 15px;
+  font-size: xx-small;
+  font-style: italic;
+}
+
+.art-offer>footer>p {
+  margin-top: 10px;
+}
+
+.art-offer button {
+  margin-top: 15px;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.art-offer button:hover {
+  background-color: #bcb8b8;
+}
 
 /* ESTILO DE PLANTILLA DE PRODUCTOS */
 .card{
