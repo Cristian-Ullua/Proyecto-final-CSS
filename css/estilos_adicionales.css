@@ -276,6 +276,29 @@ table {
     border: 3px solid var(--color-body);
 }
 
+.card>img {
+  left: 130px;
+  bottom: 3px;
+}
+
+.cards>h2 {
+  text-align: center;
+  margin-bottom: 10px;
+  font-weight: bold;
+  font-size: 1.8rem;
+}
+
+.card>h3,
+p {
+  margin-top: 5px;
+  margin-left: 10px;
+}
+
+.card:hover {
+  transform: scale(1.2);
+  z-index: 3;
+}
+
 /* ESTILO DE CONTROL DE STOCK */
 .stock-control{
     width: 398px;
@@ -284,6 +307,19 @@ table {
     background-color: var(--color-body);
     border: 3px solid var(--color-section);
     position: relative;
+}
+
+.stock-control>h2 {
+  font-size: 1.6rem;
+  font-weight: bold;
+  text-transform: capitalize;
+  color: var(--colorHeaderNav);
+  margin-bottom: 35px;
+}
+
+.stock-control h3 {
+  font-weight: bold;
+  padding-bottom: 15px;
 }
 
 .stock-alert{
@@ -303,6 +339,14 @@ table {
   background-color: var(--color-body);
   border: 3px solid var(--color-section);
 }
+
+.currency>h2 {
+  font-weight: bold;
+  text-transform: capitalize;
+  margin-bottom: 65px;
+}
+
+/* SIMULACIÓN FLUJO VALOR */
 
 .loading{
     width: 200px;
@@ -344,6 +388,16 @@ table {
     font-weight: bold;
 }
 
+/*AYUDA EN LINEA*/
+.contact-support {
+  display: flex;
+  position: fixed;
+  margin-left: 600px;
+  bottom: 10px;
+  background-color: VAR(--color-cards);
+  border: solid 1px var(--color-texto-header);
+  color: var(--color-texto-header);
+}
 
 /* ESTILO DE FOOTER */
 .main-footer{
