@@ -8,11 +8,11 @@
 
 /* ESTILOS GENERALES*/
 :root {
-  --colorHeaderNav: #0a0a0a;
-  --color-body: #f5f5f5;
-  --color-resaltado: #c9a646;
-  --color-texto-header: #ffffff;
-  --color-section: #1c1c1c;
+  --colorHeaderNav: #0015ffa5;
+  --color-body: #ff0000;
+  --color-resaltado: #ff0101;
+  --color-texto-header: #000000;
+  --color-section: #ffffff;
   --color-cards: #2e3a4f;
 
   --ancho-pantalla: 1000px;
@@ -220,16 +220,16 @@ a:hover .material-icons {
   background-color: #bcb8b8;
 }
 
-/* ESTILO DE PLANTILLA DE PRODUCTOS */
-.card{
-    display: flex;
-    width: 382px;
-    height: 220px;
-    border: 3px solid var(--color-body);
+/* ESTILO DE ACTIVIDAD RECIENTE */
+table {
+  background-color: var(--color-body);
+  color: black;
+  width: 90%;
+  text-align: center;
+  border-collapse: collapse;
+  margin-left: 5px;
 }
 
-
-/* ESTILO DE ACTIVIDAD RECIENTE */
 .activity {
   background-color: var(--color-section);
   width: 398px;
@@ -237,6 +237,29 @@ a:hover .material-icons {
   border: 3px solid var(--color-body);
 }
 
+.activity h2 {
+  text-align: center;
+  color: black;
+  margin-bottom: 10px;
+  font-weight: bold;
+  font-size: 1.8rem;
+}
+
+.activity tbody tr:hover {
+  background: linear-gradient(90deg, var(--color-body)), var(--color-section);
+  color: var(--color-resaltado);
+  cursor: pointer;
+}
+
+.activity thead th {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.activity td {
+  border-top: var(--color-section) solid 1px;
+  font-weight: bold
+}
 
 /* ESTILO DE TARJETAS*/
 .cards {
@@ -246,6 +269,12 @@ a:hover .material-icons {
   border: 3px solid var(--color-body);
 }
 
+.card{
+    display: flex;
+    width: 382px;
+    height: 220px;
+    border: 3px solid var(--color-body);
+}
 
 /* ESTILO DE CONTROL DE STOCK */
 .stock-control{
