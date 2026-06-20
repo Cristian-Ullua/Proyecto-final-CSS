@@ -8,51 +8,53 @@
 
 /* ESTILOS GENERALES*/
 :root {
-  --colorHeaderNav: #0015ffa5;
-  --color-body: #ff0000;
-  --color-resaltado: #ff0101;
-  --color-texto-header: #000000;
-  --color-section: #ffffff;
-  --color-cards: #2e3a4f;
+  --colorHeaderNav: #ffa200;       /* VARIABLE DEL COLOR PARA LA BARRA DE NAVEGACIÓN */
+  --color-body: #fffaf4;           /* PARA EL CUERPO DE LA PAGINA */
+  --color-resaltado: #FB2E02;      /* PARA EL RESALTADO DE ELEMENTOS */
+  --color-texto-header: white;     /* DEL TEXTO DENTRO DEL ENCABEZADO */
+  --color-section: #ffc480;        /* PARA LA SECCIONES */
+  --color-cards: #04437c;          /* PARA LAS TARJETAS, FIJO POR EL COLOR DE LOS LOGOS DE LA EMPRESA */
 
-  --ancho-pantalla: 1000px;
-  --ancho-nav: 220px;
+  --ancho-pantalla: 1000px;          /* ANCHO DE LA PANTALLA EN EL NAVEGADOR*/
+  --ancho-nav: 220px;                /* ANCHO DE LA BARRA DE NAVEGACION */
+                                     /* MODIFICACIONES: CREAR VARIABLES PARA QUE LA WEB RESPONSIVE */
 }
 
 /* ESTILOS DE CABECERA PRINCIPAL*/ 
 .main-header{
-  width: var(--ancho-pantalla);
-  display: flex;
-  position: relative;
-  background-color: var(--colorHeaderNav);
-  border: 1px solid var(--color-body);
-  z-index: 10;
-}
+  width: var(--ancho-pantalla);                 
+  display: flex;                                /* Se genera un Flexbox para organizar los elementos internos */
+  position: relative;                           /* Y posicionar elementos hijos de forma relativa */
+  background-color: var(--colorHeaderNav);      
+  border: 1px solid var(--color-body);          
+  z-index: 10; 
+}                   
 
 .main-header img{
-  position: relative;
-  margin-left: 5%;
-  height: 100%;
-  order: 1;
-  filter: saturate(200%);
+  position: relative;                           /* La imagen se posiciona relativa a su contenedor */
+  margin-left: 5%;                              /* Con un margen a la izquierda del 5% del ancho del contenedor*/
+  margin-top: 0.4%;                             /* Dezplazada 0,4% hacia abajo*/
+  height: 90%;                                  /* Y la imagen ocupa casi toda la altura del header */
+  order: 1;                                     /* La imagen "100% gratis" va a ser el primer elemento del encabezado*/
+  filter: saturate(200%);                       /* Con el doble de color de saturación */
 }
 
 .main-header>h1 {
-  position: absolute;
-  margin-left: 40%;
-  color: var(--color-texto-header);
-  align-self: center;
-  order: 2;
+  position: absolute;                           /* Al titulo "FDW - PROYECTO CSSL" se le da una posición fija en la cabezera */
+  margin-left: 40%;                             /* Dezplazada 40% hacia la derecha */
+  color: var(--color-texto-header);             
+  align-self: center;                           /* Se centra verticalmente dentro del contenedor flex */
+  order: 2;                                     /* Va a ser el segundo en el orden del Flexbox */
 }
 
 .notifications {
-  position: absolute;
-  top: 40%;
-  padding: 11px;
-  right: 1px;
-  justify-content: center;
-  color: var(--color-texto-header);
-  order: 3;
+  position: absolute;                           /* Y la campana de notificación tambien se deja de forma absoluta */
+  top: 40%;                                     /* A un 40% desde la parte superior */
+  padding: 10px;                                /* Con un espaciado interno*/
+  right: 1px;                                   /* Pegado casi al borde derecho */
+  justify-content: center;                      /* Centramos el contenido dentro del contenedor */
+  color: var(--color-texto-header);             
+  order: 3;                                     /* Y con posicion 3ra en el flexbox */
 }
 
 
@@ -67,7 +69,7 @@ body {
 }
 
 .menu-group>h2 {
-  padding-top: 8px;
+  padding-top: 10px;
   padding-left: 25px;
   font-size: 25px;
   color: var(--color-body);
@@ -83,6 +85,29 @@ body {
   margin-right: 5px;
 }
 
+/* ANIMACION ICONO CAMPANA */
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+
+  
+  10%, 30%, 50%, 70%, 90% {
+    transform: translateX(-5px);
+  }
+
+  20%, 40%, 60%, 80% {
+    transform: translateX(5px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.notification-icon:hover {
+  animation: shake 0.5s ease-in-out;
+}
 
 /* ESTILOS DE BARRA DE NAVEGACIÓN */
 main {
@@ -101,7 +126,7 @@ main section{
     width: var(--ancho-nav);
     padding: 0px 10px;
     position: relative;
-    top: 10px;
+    top: 1px;   /* Separamos a 1px de la cabezera */
     left: 0px;
     background-color: var(--colorHeaderNav);
     overflow-y: visible  
@@ -114,7 +139,7 @@ main section{
 
 /* ESTILOS DE ENLACES */
 a {
-  padding: 3px 0;
+  padding: 3px 1px;
   display: flex;
   color: var(--color-texto-header);
   text-decoration: none;
@@ -149,6 +174,34 @@ a:hover .material-icons {
   border: 1px solid var(--color-body);
 }
 
+.exclusive-offers h2 {
+  width: 350px;
+  left: 430px;
+  position: absolute;
+  text-align: center;
+  color: var(--color-texto-header);
+  background-color: var(--color-resaltado);
+  font-size: 1.8rem;
+  border-bottom: none;
+  animation: titulo 10s infinite;
+  text-transform: uppercase;
+  border-radius: 50px;
+}
+ 
+/*  TITULO EN MOVIMIENTO */
+@keyframes titulo {
+  0% {
+    left: 230px;
+  }
+
+  50% {
+    left: 640px;
+  }
+
+  100% {
+    left: 230px;
+  }
+}
 
 /* ESTILO DE TAMAÑO DE IMAGENES DE LAS CAJAS */
 .art-offer {
@@ -221,15 +274,6 @@ a:hover .material-icons {
 }
 
 /* ESTILO DE ACTIVIDAD RECIENTE */
-table {
-  background-color: var(--color-body);
-  color: black;
-  width: 90%;
-  text-align: center;
-  border-collapse: collapse;
-  margin-left: 5px;
-}
-
 .activity {
   background-color: var(--color-section);
   width: 398px;
@@ -238,22 +282,32 @@ table {
 }
 
 .activity h2 {
+  margin-top: 10px;
   text-align: center;
   color: black;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   font-weight: bold;
   font-size: 1.8rem;
+}
+
+table {
+  background-color: var(--color-body);
+  color: black;
+  width: 90%;
+  text-align: center;
+  border-collapse: collapse;
+  margin-left: 5%;
+}
+
+.activity thead th {
+  font-size: 1.4rem;
+  font-weight: bold;
 }
 
 .activity tbody tr:hover {
   background: linear-gradient(90deg, var(--color-body)), var(--color-section);
   color: var(--color-resaltado);
   cursor: pointer;
-}
-
-.activity thead th {
-  font-size: 1.4rem;
-  font-weight: bold;
 }
 
 .activity td {
@@ -264,16 +318,27 @@ table {
 /* ESTILO DE TARJETAS*/
 .cards {
   display: flex;
+  flex-direction: column;   
+  align-items: flex-start;
   width: 382px;
-  height: 220px;
+  height: auto;             
   border: 3px solid var(--color-body);
+  background-color: var(--color-section); 
+  padding: 8px;
 }
 
-.card{
-    display: flex;
-    width: 382px;
-    height: 220px;
-    border: 3px solid var(--color-body);
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 60%;              
+  margin-top: 10px; 
+  margin-left: 20%;         
+  background-color: var(--color-cards); 
+  color: var(--color-texto-header);     
+  border-radius: 8px;
+  padding: 8px;
+  border: 1px solid #9a9a9a;
+  transition: transform 0.3s ease;
 }
 
 .card>img {
@@ -283,7 +348,7 @@ table {
 
 .cards>h2 {
   text-align: center;
-  margin-bottom: 10px;
+  margin-bottom: 10px; /* al mismo nivel que actividad reciente */
   font-weight: bold;
   font-size: 1.8rem;
 }
@@ -295,7 +360,7 @@ p {
 }
 
 .card:hover {
-  transform: scale(1.2);
+  transform: scale(1.05);
   z-index: 3;
 }
 
@@ -322,11 +387,36 @@ p {
   padding-bottom: 15px;
 }
 
-.stock-alert{
-    width: 110px;
-    height: 60px;
+.stock-alert[data-alert-level="high"]::before {
+  margin-top: 10px;
+  width: 30%;
+  height: 30px;
+  content: attr(data-stock) " unidades";
+  display: block;
+  background-color: var(--color-resaltado);
+  border: 1px solid black;
+  text-align: end;
 }
 
+.stock-alert[data-alert-level="medium"]::before {
+  width: 60%;
+  height: 30px;
+  content: attr(data-stock) " unidades";
+  display: block;
+  background-color: var(--colorHeaderNav);
+  border: 1px solid black;
+  text-align: end;
+}
+
+.stock-alert[data-alert-level="low"]::before {
+  width: 90%;
+  height: 30px;
+  content: attr(data-stock) " unidades";
+  display: block;
+  background-color: var(--color-cards);
+  border: 1px solid black;
+  text-align: end;
+}
 
 /* ESTILO DE COTIZACION DOLAR */
 .currency {
@@ -346,7 +436,19 @@ p {
   margin-bottom: 65px;
 }
 
-/* SIMULACIÓN FLUJO VALOR */
+.currency>p{
+    display: block;
+    top: 20px;
+    margin-top: 10px;
+    color: black;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+/* SIMULACIÓN FLUJO 
+VERDE: DOLAR OFICIAL,
+AZUL: DOLAR BLUE,
+NEGRO: DOLAR MEP */
 
 .loading{
     width: 200px;
@@ -356,6 +458,7 @@ p {
     margin-left: 80px;
 }
 
+
 .loading-item{
     width: 35px;
     height: 35px;
@@ -363,6 +466,21 @@ p {
     background-color: lightblue;
     animation: dolar 1s linear infinite;
     border-radius: 0;
+}
+
+.loading-item:nth-child(1) {
+  background-color: green;
+  animation-delay: 0.1s;
+}
+
+.loading-item:nth-child(2) {
+  animation-delay: 0.3s;
+  background-color: blue;
+}
+
+.loading-item:nth-child(3) {
+  animation-delay: 0.5s;
+  background-color: black;
 }
 
 @keyframes dolar {
@@ -379,15 +497,6 @@ p {
   }
 }
 
-.currency>p{
-    display: block;
-    top: 20px;
-    margin-top: 10px;
-    color: black;
-    font-size: 15px;
-    font-weight: bold;
-}
-
 /*AYUDA EN LINEA*/
 .contact-support {
   display: flex;
@@ -397,6 +506,11 @@ p {
   background-color: VAR(--color-cards);
   border: solid 1px var(--color-texto-header);
   color: var(--color-texto-header);
+}
+
+.contact-support:hover {
+  color: var(--color-texto-header);
+  background-color: var(--color-cards);
 }
 
 /* ESTILO DE FOOTER */
