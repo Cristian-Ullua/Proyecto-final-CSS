@@ -13,7 +13,7 @@
   --color-resaltado: #FB2E02;      /* PARA EL RESALTADO DE ELEMENTOS */
   --color-texto-header: white;     /* DEL TEXTO DENTRO DEL ENCABEZADO */
   --color-section: #ffc480;        /* PARA LA SECCIONES */
-  --color-cards: #04437c;          /* PARA LAS TARJETAS, FIJO POR EL COLOR DE LOS LOGOS DE LA EMPRESA */
+  --color-cards: #ff7b00;          /* PARA LAS TARJETAS, FIJO POR EL COLOR DE LOS LOGOS DE LA EMPRESA */
 
   --ancho-pantalla: 1000px;          /* ANCHO DE LA PANTALLA EN EL NAVEGADOR*/
   --ancho-nav: 220px;                /* ANCHO DE LA BARRA DE NAVEGACION */
