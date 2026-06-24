@@ -57,56 +57,46 @@
   order: 3;                                     /* Y con posicion 3ra en el flexbox */
 }
 
-
-/* ESTILO DEL CUERPO Y EL MENU PRINCIPAL */
-body {
-  background-color: var(--color-body);
-  width: var(--ancho-pantalla);
-}
-
-.menu-group {
-  margin-bottom: 20px;
-}
-
-.menu-group>h2 {
-  padding-top: 10px;
-  padding-left: 25px;
-  font-size: 25px;
-  color: var(--color-body);
-}
-
-.menu-group a {
-  display: block;
-  margin-left: 20px;
-  color: var(--color-body);
-}
-
-.menu-group a .material-icons {
-  margin-right: 5px;
-}
+.notification-icon:hover {                      /* CUANDO PASEMOS EL PUNTERO SOBRE LA CAMPANA */
+  animation: shake 0.5s ease-in-out;            /* Aplicamos la animación la cual llamaremos "shake" durante un tiempo de 0,5 segundos */
+}                                               /* "else-in-out" es una opcion para empezar la animacion suave, acelerarla a la mitad y despues terminar suavemente la animacion */
 
 /* ANIMACION ICONO CAMPANA */
 @keyframes shake {
-  0% {
-    transform: translateX(0);
-  }
+  0% { transform: translateX(0);}                             /* Empieza en su posicion original */
 
-  
-  10%, 30%, 50%, 70%, 90% {
-    transform: translateX(-5px);
-  }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-5px);}     /* Cuando el tiempo 0,5 seg. Llegue al 10, 30, ect. Debera estar 5px hacia la izquierda*/
 
-  20%, 40%, 60%, 80% {
-    transform: translateX(5px);
-  }
+  20%, 40%, 60%, 80% { transform: translateX(5px);}           /* Lo contrario a lo anterior */
 
-  100% {
-    transform: translateX(0);
-  }
+  100% {transform: translateX(0);}                            /* Y al terminar el tiempo de animacion volver a su posicion original */
 }
 
-.notification-icon:hover {
-  animation: shake 0.5s ease-in-out;
+/* ESTILO DEL CUERPO Y EL MENU PRINCIPAL */
+body {
+  width: var(--ancho-pantalla);                 /* Ajustamos el ancho del cuerpo de la pagina con 1000 px*/
+  background-color: var(--color-body);          /* Y le asignamos el color de la variable del cuerpo */
+}
+
+.menu-group {
+  margin-bottom: 20px;                          /* Se agrega un margen inferior de 20px entre grupos de menú */
+}
+
+.menu-group>h2 {                                /* LE APLICAMOS AL PRIMER HIJO DIRECTO "H2" DEL MENU PRINCIPAL */
+  padding-top: 10px;                            /* Un espacio en la parte superior del titulo */
+  padding-left: 25px;                           /* Y otro a la izquierda del mismo */
+  font-size: 25px;                              /* Definimos el tamaño de la letra */
+  color: var(--color-body);                     /* y por ultimo le asignamos el color de una variable */
+}
+
+.menu-group a {                                /* A TODOS LOS ENLACES DEL MENU PRINCIPAL */
+  display: block;                              /* Hacemos que ocupe toda una línea (bloque) */
+  margin-left: 20px;                           /* Y desplazamos hacia la derecha */
+  color: var(--color-body);
+}
+
+.menu-group a .material-icons {                /*  Y A LOS ELEMENTOS DE LA CLASE "material-icons" DENTRO DE LAS ETIQUETAS ENLACES */
+  margin-right: 5px;                           /* Desplazamos hacia la izquierda con el fin de separa el icono del texto del menu*/
 }
 
 /* ESTILOS DE BARRA DE NAVEGACIÓN */
