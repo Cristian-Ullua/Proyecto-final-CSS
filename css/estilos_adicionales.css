@@ -101,29 +101,30 @@ body {
 
 /* ESTILOS DE BARRA DE NAVEGACIÓN */
 main {
-  width: calc(var(--ancho-pantalla) - var(--ancho-nav));
-  background-color: var(--color-texto-header);
-  justify-content: flex-end;
+  justify-content: flex-end;                                /* Y los elementos dentro del main los alineamos hacia el extremo derecho dejando al izquierdo la barra de busquedad*/
+  width: calc(var(--ancho-pantalla) - var(--ancho-nav));    /* El ancho del área principal del main sera, el ancho de la pagina 1000 px - 220px del ancho de la barra de busqueda */
+  background-color: var(--color-texto-header);              /* Definimos el color del fondo */
+  
 }
 
 main section{
-    padding: 2px;
-    background-color: var(--color-section);
+    padding: 2px;                                           /* A sa secciones del main derecho, le generamos un espacio interno en cada sección*/
+    background-color: var(--color-section);                 /* Y tambien definimos el color */
 }
 
 .main-menu{
-    float: left;
-    width: var(--ancho-nav);
-    padding: 0px 10px;
-    position: relative;
-    top: 1px;   /* Separamos a 1px de la cabezera */
-    left: 0px;
-    background-color: var(--colorHeaderNav);
-    overflow-y: visible  
+    float: left;                                            /* La barra de navegación se coloca a la izquierda del contenido */
+    width: var(--ancho-nav);                                /* El ancho de la barra sera de 220px */
+    padding: 0px 10px;                                      /* Espaciado interno horizontal */
+    position: relative;                                     /* Posicionamiento relativo para poder ajustar con top/left */
+    top: 1px;                                               /* Separamos a 1px de la cabezera */
+    left: 0px;                                              /* Ademas, se mantendra pegada a la izquierda del body */
+    background-color: var(--colorHeaderNav);                /* Definir el color */
+    overflow-y: visible                                     /* Y por ultimo el contenido que se desborde verticalmente será visible */
 }
 
 .material-icons {
-  margin-right: 3px;
+  margin-right: 3px;                                        /* Y a los iconos se le agrega un pequeño margen a la derecha, para separarlos del texto */
 }
 
 
