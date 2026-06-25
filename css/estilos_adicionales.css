@@ -354,14 +354,15 @@ table {
   z-index: 4;                                   /* La coloca por encima de otros elementos */
 }
 
+
 /* ESTILO DE CONTROL DE STOCK */
 .stock-control {
     position: relative;                         /* Indicamos una posicion relativa, para despues posicionar elementos hijos de forma absoluta */
     width: 398px;                               /* Definimos el ancho y el alto del contenedor */
     height: 265px;                                
     padding: 5px;              
-    background-color: var(--color-body); /
-    border: 3px solid var(--color-section);
+    background-color: var(--color-body);
+    border: 3px solid var(--color-section);  
 }
 
 .stock-control>h2 {
@@ -374,7 +375,6 @@ table {
 .stock-control h3 {
   padding-bottom: 15px;                 /* Separamos cada contenedor de las barra de stock en la parte inferior */
   font-weight: bold;                    /* En negrita */
-  
 }
 
 .stock-alert[data-alert-level="high"]::before {   /* Todas las barras tendran */
@@ -414,32 +414,34 @@ table {
   border: 1px solid black;
 }
 
+
 /* ESTILO DE COTIZACION DOLAR */
 .currency {
-  width: 380px;
-  height: 265px;
-  font-size: 1.2rem;
-  color: var(--colorHeaderNav);
-  text-align: center;
-  margin-left: 2px;
-  background-color: var(--color-body);
-  border: 3px solid var(--color-section);
+  width: 380px;                                 /* Se define el ancho y el alto del contenedor */
+  height: 265px;                                
+  text-align: center;                           /* Se centra el contenido */
+  font-size: 1.2rem;                            /* Con el titulo al mismo tamaño que control de stock */
+  color: var(--colorHeaderNav);                 
+  margin-left: 2px;                             /* Margen izquierdo muy pequeño para separarlo del control de stock */
+  background-color: var(--color-body);          
+  border: 3px solid var(--color-section);       
 }
 
-.currency>h2 {
-  font-weight: bold;
-  text-transform: capitalize;
-  margin-bottom: 65px;
+.currency > h2 {
+  margin-bottom: 65px;           /* al contenido lo bajamos muy poco contra el elemento anterior*/
+  font-weight: bold;             /* En negrita */
 }
 
-.currency>p{
-    display: block;
-    top: 20px;
-    margin-top: 10px;
-    color: black;
-    font-size: 15px;
-    font-weight: bold;
+.currency > p {
+  display: block;                /* Aseguramos que se muestre el párrafo como bloque */
+  position: relative;
+  top: 5px;                     /* Posicionamos desde el borde inferior hacia arriba */
+  margin-top: 10px;             /* Y dejamos entre cada texto muy pequeño */
+  font-size: 15px;              /* Definimos el tamaño del texto */
+  font-weight: bold;            /* En negrita */
+  color: black;                
 }
+
 
 /* SIMULACIÓN FLUJO 
 VERDE: DOLAR OFICIAL,
@@ -447,26 +449,23 @@ AZUL: DOLAR BLUE,
 NEGRO: DOLAR MEP */
 
 .loading{
-    width: 200px;
+    width: 200px;                           /* Definimos el ancho y el alto del contenedor */
     height: 100px;
-    justify-content: space-around;
-    align-items: flex-end;
-    margin-left: 80px;
+    justify-content: space-around;          /* Se distribuye los elementos hijos con espacio uniforme entre ellos */
+    align-items: flex-end;                  /* Alineandolos en el borde inferior del contenedor */
+    margin-left: 80px;                      /* Con un margen izquierdo para desplazar el bloque */
 }
-
 
 .loading-item{
-    width: 35px;
-    height: 35px;
-    margin-right: 0;
-    background-color: lightblue;
-    animation: dolar 1s linear infinite;
-    border-radius: 0;
+    width: 35px;                            /* Cada barra de tendra un ancho y alto fijo*/
+    height: 35px;                           
+    border-radius: 0;                       /* Y sin bordes en las barras */
+    animation: dolar 1s linear infinite;    /* Por ultimo aplicamos la animación con duración de 1s, de forma lineal y infinitamente */
 }
 
-.loading-item:nth-child(1) {
-  background-color: green;
-  animation-delay: 0.1s;
+.loading-item:nth-child(1) {      /* Y animamos a cada hijo */
+  animation-delay: 0.1s;          /* Generamos un delay antes de inicial la animacion */
+  background-color: green;      /* Con el delay generamos un orden de animacion para que no se muevan la 3 a la vez */
 }
 
 .loading-item:nth-child(2) {
@@ -480,17 +479,11 @@ NEGRO: DOLAR MEP */
 }
 
 @keyframes dolar {
-  0% {
-    height: 30px;
-  }
+  0% {height: 30px;}          /* iniciamos con una barra pequeña verticalmente */
 
-  50% {
-    height: 100px;
-  }
+  50% {height: 100px;}        /* La llemamos a su altura maxima a mitad de la animacion */
 
-  100% {
-    height: 30px;
-  }
+  100% {height: 30px;}        /* Y cuando llegue al fina volvemos a la misma altura que el inicio */
 }
 
 /*AYUDA EN LINEA*/
