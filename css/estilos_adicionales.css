@@ -307,51 +307,51 @@ table {
 
 /* ESTILO DE TARJETAS*/
 .cards {
-  display: flex;
-  flex-direction: column;   
-  align-items: flex-start;
-  width: 382px;
-  height: auto;             
+  display: flex;                                  /* El contenedor de las tarjetas sera flexible */
+  width: 382px;                                   /* Definimos un ancho fijo y una altura automatica */
+  height: auto;                                   
+  background-color: var(--color-section);
   border: 3px solid var(--color-body);
-  background-color: var(--color-section); 
-  padding: 8px;
+  padding: 8px;                                   /* Le damos un espacio interno */ 
+  flex-direction: column;                         /* Los elementos hijos se apilan en columna */
+  align-items: flex-start;                        /* Y se alinean al inicio del eje horizontal */
 }
 
 .card {
-  display: flex;
-  flex-direction: column;
-  width: 60%;              
-  margin-top: 10px; 
-  margin-left: 20%;         
+  display: flex;                                  /* Y a cada tarjeta tambien seran contenedores flexibles */
+  width: 60%;                                     /* Ocupara el 60% del ancho del contenedor padre */
   background-color: var(--color-cards); 
   color: var(--color-texto-header);     
-  border-radius: 8px;
-  padding: 8px;
-  border: 1px solid #9a9a9a;
-  transition: transform 0.3s ease;
+  border-radius: 8px;                             /* Redondeamos los bordes */
+  border: 1px solid #9a9a9a;                    /* y le damos otro color diferente de la tarjeta */
+  flex-direction: column;                         /* Sus elementos se apilan en columna */
+  margin-top: 10px;                               /* Se separara en la parte inferior entre tarjetas */
+  margin-left: 20%;                               /* Desplaza la tarjeta hacia la derecha */
+  padding: 8px;                  
+  transition: transform 0.3s ease;                /* Animación suave al aplicar transformaciones */
 }
 
 .card>img {
-  left: 130px;
-  bottom: 3px;
+  position: relative;                             /* A la marca de la tarjeta de damos una pósicion relativa */
+  left: 170px;                                    /* Posicionamos el logo de la empresa a la derecha inferior */
+  bottom: 5px;                                    
 }
 
 .cards>h2 {
-  text-align: center;
-  margin-bottom: 10px; /* al mismo nivel que actividad reciente */
-  font-weight: bold;
-  font-size: 1.8rem;
+  font-size: 1.8rem;                              /* Al tipo titulo de las "tarjeta preferidas" le damos un tamaño de texto relativamente grande */
+  text-align: center;                             /* Centra el título dentro del contenedor con un espacio en el margen superior*/
+  margin-bottom: 10px;            
+  font-weight: bold;                              /*  En negrita */
 }
 
-.card>h3,
-p {
-  margin-top: 5px;
-  margin-left: 10px;
+.card>h3, p{
+  margin-top: 5px;                               
+  margin-left: 10px;                             
 }
 
 .card:hover {
-  transform: scale(1.05);
-  z-index: 3;
+  transform: scale(1.05);                       /* Agranda la tarjeta al pasar el mouse */
+  z-index: 4;                                   /* La coloca por encima de otros elementos */
 }
 
 /* ESTILO DE CONTROL DE STOCK */
