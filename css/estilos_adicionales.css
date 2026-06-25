@@ -130,27 +130,27 @@ main section{
 
 /* ESTILOS DE ENLACES */
 a {
-  padding: 3px 1px;
-  display: flex;
-  color: var(--color-texto-header);
-  text-decoration: none;
+  display: flex;                                            /* Se convierte los enlaces en un contenedor flexible */
+  padding: 3px 1px;                                         /* Espaciado interno: 3px arriba/abajo y 1px izquierda/derecha */
+  color: var(--color-texto-header);                         /* Definimos el color del texto */
+  text-decoration: none;                                    /* Y se 0elimina el subrayado para que no aparesca al pasar el cursor */
 }
 
 a>.menu-text {
-  color: var(--color-texto-header);
-  font-size: 15px;
+  color: var(--color-texto-header);                        /* Al primer hijo directo de la clase main-text del enlace le cambiamos el color del texto */
+  font-size: 15px;                                         /* Y el tamaño de la fuente */
 }
 
 a:hover {
-  background-color: var(--color-resaltado);
+  background-color: var(--color-resaltado);               /* Cambiamos el color del fondo cuando pasamos el cursor */
 }
 
 a:hover .menu-text {
-  color: var(--color-texto-header);
+  color: var(--color-texto-header);                       /* Al igual que al color del texto */
 }
 
 a:hover .material-icons {
-  color: var(--color-texto-header);
+  color: var(--color-texto-header);                       /* Y del icono tambien */
 }
 
 
