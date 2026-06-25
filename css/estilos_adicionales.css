@@ -486,31 +486,34 @@ NEGRO: DOLAR MEP */
   100% {height: 30px;}        /* Y cuando llegue al fina volvemos a la misma altura que el inicio */
 }
 
+
 /*AYUDA EN LINEA*/
 .contact-support {
-  display: flex;
-  position: fixed;
-  margin-left: var(--ancho-pantalla);
-  background-color: VAR(--color-cards);
-  border: solid 1px var(--color-texto-header);
+  display: flex;                                    /* Se define al contenedor flexible */
+  position: fixed;                                  /* Mantiene el elemento fijo en la pantalla, aunque se haga scroll */
+  bottom: 70px;                                     /* Separación levemente desde la parte inferior y casi sobre el borde derecho */
+  left: 880px;                                    
+  border-radius: 10px;                              /* La cual tendra el boton bordes redondeados */
+  background-color: VAR(--color-cards);             
+  border: solid 1px var(--color-texto-header);     
   color: var(--color-texto-header);
-  border-radius: 10px;
+  z-index: 1000;                                    /* Y por ultimo asegurar que quede por encima de cualquier elemento */
 }
 
 .contact-support:hover {
-  color: var(--color-resaltado);
+  cursor: pointer;                                                                /* Cambia el cursor a "mano" indicando que es clickeable */
+  color: var(--color-resaltado);                                                 
   background-color: var(--color-cards);
-  background: linear-gradient(90deg, var(--color-body)), var(--color-section);
-  cursor: pointer;
+  background: linear-gradient(45deg, var(--color-body), var(--color-section));   /* Y aplicamos un degradado cuando pasamos el cursor */
+  
 }
 
 /* ESTILO DE FOOTER */
-.main-footer{
-    width: var(--ancho-pantalla);
-    background-color: var(--color-section);
-    height: 64px;
-    padding: 20px;
-    text-align: center;
-    bottom: 10px;
+.main-footer {
+    width: var(--ancho-pantalla);                   /* El pie tendra el ancho de la pantalla y no afectara a la barra de navegacion por que esta sobre el pie */
+    height: 64px;                                   /* Y tambien definimos un alto fijo */
+    padding: 32px;                                  
+    text-align: center;                             /* Centramos horizontalmente el texto */
+    background-color: var(--color-section);         
     border-top: 3px solid var(--color-body);
 }
