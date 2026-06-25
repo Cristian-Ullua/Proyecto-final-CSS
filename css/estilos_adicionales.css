@@ -156,42 +156,34 @@ a:hover .material-icons {
 
 /* ESTILOS DE CAJAS DE PRODUCTOS Y OFERTAS */
 .exclusive-offers {
-  display: flex;
-  flex-wrap: nowrap;
-  flex-direction: row;
-  height: 450px;
-  width: calc(var(--ancho-pantalla) - var(--ancho-nav));
-  text-align: center;
-  border: 1px solid var(--color-body);
+  display: flex;                                            /* La clases exclusive-offers seran contenedor flexible para organizar elementos en fila */
+  flex-direction: row;                                      /* Dirección principal: horizontal (fila) */
+  flex-wrap: nowrap;                                        /* No se va a permitir que los elementos se vayan a otra línea */
+  height: 450px;                                            /* Se define una altura fija */
+  width: calc(var(--ancho-pantalla) - var(--ancho-nav));    /* Y el ancho va a ser lo inverso a la barra de navegación o el restante*/
+  border: 1px solid var(--color-body);                      /* Se agrega borde */
+  text-align: center;                                       /* Y por ultimo se centra el texto dentro del contenedor */
 }
 
 .exclusive-offers h2 {
-  width: 350px;
-  left: 430px;
-  position: absolute;
-  text-align: center;
-  color: var(--color-texto-header);
-  background-color: var(--color-resaltado);
-  font-size: 1.8rem;
-  border-bottom: none;
-  animation: titulo 10s infinite;
-  text-transform: uppercase;
-  border-radius: 50px;
+  width: 350px;                                             /* Ancho fijo del título */
+  left: 430px;                                              /* Posición horizontal inicial */
+  position: absolute;                                       /* Se posiciona de forma absoluta dentro del contenedor */
+  border-bottom: none;                                      /* ademas se elimina el borde inferior */
+  border-radius: 50px;                                      /* Y redondeados los bordes */
+  background-color: var(--color-resaltado);                 /* por ultimo le asignamos un color de fondo */
+  text-align: center;                                       /* Luego al texto lo centramos*/
+  font-size: 1.8rem;                                        /* Con un tamaño de fuente relativamente grande */
+  text-transform: uppercase;                                /* Todo en mayúsculas */
+  color: var(--color-texto-header);                         
+  animation: titulo 10s infinite;                           /* Y terminamos Aplicando una animación con duración de 10seg, de repetición infinita */
 }
- 
-/*  TITULO EN MOVIMIENTO */
+
+/* Animación del título en movimiento  "OFERTAS PARA TI"*/
 @keyframes titulo {
-  0% {
-    left: 230px;
-  }
-
-  50% {
-    left: 640px;
-  }
-
-  100% {
-    left: 230px;
-  }
+  0%   { left: 230px; }                                     /* Iniciamos a la izquierda el contenedor bien pegado a la barra de busquedad */
+  50%  { left: 640px; }                                     /* Llegamos hacia el otro extremo */
+  100% { left: 230px; }                                     /* Y volvemos hacia la izquierdfa de nuevo */
 }
 
 /* ESTILO DE TAMAÑO DE IMAGENES DE LAS CAJAS */
