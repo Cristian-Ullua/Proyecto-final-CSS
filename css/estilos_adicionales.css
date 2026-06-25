@@ -20,6 +20,7 @@
                                      /* MODIFICACIONES: CREAR VARIABLES PARA QUE LA WEB RESPONSIVE */
 }
 
+
 /* ESTILOS DE CABECERA PRINCIPAL*/ 
 .main-header{
   width: var(--ancho-pantalla);                 
@@ -61,6 +62,7 @@
   animation: shake 0.5s ease-in-out;            /* Aplicamos la animación la cual llamaremos "shake" durante un tiempo de 0,5 segundos */
 }                                               /* "else-in-out" es una opcion para empezar la animacion suave, acelerarla a la mitad y despues terminar suavemente la animacion */
 
+
 /* ANIMACION ICONO CAMPANA */
 @keyframes shake {
   0% { transform: translateX(0);}                             /* Empieza en su posicion original */
@@ -71,6 +73,7 @@
 
   100% {transform: translateX(0);}                            /* Y al terminar el tiempo de animacion volver a su posicion original */
 }
+
 
 /* ESTILO DEL CUERPO Y EL MENU PRINCIPAL */
 body {
@@ -98,6 +101,7 @@ body {
 .menu-group a .material-icons {                /*  Y A LOS ELEMENTOS DE LA CLASE "material-icons" DENTRO DE LAS ETIQUETAS ENLACES */
   margin-right: 5px;                           /* Desplazamos hacia la izquierda con el fin de separa el icono del texto del menu*/
 }
+
 
 /* ESTILOS DE BARRA DE NAVEGACIÓN */
 main {
@@ -186,74 +190,75 @@ a:hover .material-icons {
   100% { left: 230px; }                                     /* Y volvemos hacia la izquierdfa de nuevo */
 }
 
+
 /* ESTILO DE TAMAÑO DE IMAGENES DE LAS CAJAS */
 .art-offer {
-  margin-top: 30px;
-  background-color: var(--color-body);
-  border: solid 3px var(--color-section);
+  margin-top: 30px;                           /* Dejamos un espacio en el margen superior de 30px */
+  background-color: var(--color-body);        /* Le damos un color */
+  border: solid 3px var(--color-section);     /* Y generamos un borde de otro color */
 }
 
 .art-offer header {
-  margin-bottom: 15px;
+  margin-bottom: 15px;                        /* A la cabecera de la clase le damos un espacio inferior para separarlo del texto */
 }
 
 .art-offer>header>p {
-  margin: 5px;
-  font-size: 30px;
-  font-weight: bold;
-  color: #333;
+  margin: 5px;                                /* Y lo hijos directos parrafos del encabezado, le asignamos un margen alrededor del párrafo */
+  font-size: 30px;                            /* Definimos el tamaño */
+  font-weight: bold;                          /* En negrita */
+  color: #333;                              /* Color gris oscuro */
 }
 
-.art-offer>header>p::before {
-  content: attr(data-art-old-price);
-  margin: 5px;
-  font-size: 20px;
-  text-decoration: line-through;
-  color: var(--color-resaltado);
+.art-offer>header>p::before {                 /* A los pseudo elementos de esos mismo hijos directos le insertamos contenido*/
+  content: attr(data-art-old-price);          /* Insertamos el precio anterior desde el atributo HTML */
+  margin: 5px;                                /* que tendra un margen */
+  font-size: 20px;                            /* Y un tamaño diferente al del precio actual o en oferta */
+  text-decoration: line-through;              /* Lo tachamos para indicar que es un precio anterior */
+  color: var(--color-resaltado);              
 }
 
 .art-offer h3 {
-  margin: 10px;
-  font-size: 19px;
-  text-align: center;
-  height: 55px;
-  font-weight: bold;
+  margin: 10px;                               /* Margen alrededor */
+  font-size: 19px;                            /* Tamaño de fuente medio */
+  text-align: center;                         /* Centrado horizontal */
+  height: 55px;                               /* Altura fija */
+  font-weight: bold;                          /* Negrita */
 }
 
 .art-offer>img {
-  width: 120px;
+  width: 120px;                               /* Al imagen de la caja le damos una proporcion cuadrada */
   height: 120px;
 }
 
 .art-details{
-  height: 70px;  
+  height: 70px;                               /* Definimos el alto de los detalles */
   background-color: var(--color-body);
 }
 
 .art-details>h4 {
-  font-size: x-small;
-  font-weight: bold;
-  margin-top: 10px;
+  font-size: x-small;                         /* A los titulos h4 de los detalles, le damos un texto muy pequeño */
+  margin-top: 10px;                           /* Separación del margen superior */
+  font-weight: bold;                          /* En negrita */ 
 }
 
 .art-details>p {
-  margin-top: 15px;
-  font-size: xx-small;
-  font-style: italic;
+  font-size: xx-small;                        /* y al parrafos de los detalles, tambien le damos un texto pequeño */
+  margin-top: 15px;                           /* Separado en el margen superior del titulo de los detalles */
+  font-style: italic;                         /* En cursiva */
 }
 
 .art-offer>footer>p {
-  margin-top: 10px;
+  margin-top: 10px;                           /* Y al pie del articulo en oferta lo separamos del margen superior superior*/
 }
 
 .art-offer button {
-  margin-top: 15px;
-  padding: 5px;
-  border-radius: 5px;
+  margin-top: 15px;                           /* Lo mismo hacemos con el boton de comprar */
+  padding: 5px;                               /* Le damos un borde interno */
+  border-radius: 5px;                         /* Y que sea redondeado esos bordes */
 }
 
 .art-offer button:hover {
-  background-color: #bcb8b8;
+  background-color: #bcb8b8;                /* Por ultimo al pasar el cursor cambie de color*/
 }
 
 /* ESTILO DE ACTIVIDAD RECIENTE */
