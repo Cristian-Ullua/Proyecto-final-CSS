@@ -13,7 +13,7 @@
   --color-resaltado: #FB2E02;      /* PARA EL RESALTADO DE ELEMENTOS */
   --color-texto-header: white;     /* DEL TEXTO DENTRO DEL ENCABEZADO */
   --color-section: #ffc480;        /* PARA LA SECCIONES */
-  --color-cards: #893af8;          /* PARA LAS TARJETAS, FIJO POR EL COLOR DE LOS LOGOS DE LA EMPRESA */
+  --color-cards: #ff7b00;          /* PARA LAS TARJETAS, FIJO POR EL COLOR DE LOS LOGOS DE LA EMPRESA */
 
   --ancho-pantalla: 1000px;          /* ANCHO DE LA PANTALLA EN EL NAVEGADOR*/
   --ancho-nav: 220px;                /* ANCHO DE LA BARRA DE NAVEGACION */
@@ -355,63 +355,63 @@ table {
 }
 
 /* ESTILO DE CONTROL DE STOCK */
-.stock-control{
-    width: 398px;
-    height: 265px;
-    padding: 5px;
-    background-color: var(--color-body);
+.stock-control {
+    position: relative;                         /* Indicamos una posicion relativa, para despues posicionar elementos hijos de forma absoluta */
+    width: 398px;                               /* Definimos el ancho y el alto del contenedor */
+    height: 265px;                                
+    padding: 5px;              
+    background-color: var(--color-body); /
     border: 3px solid var(--color-section);
-    position: relative;
 }
 
 .stock-control>h2 {
-  font-size: 1.6rem;
-  font-weight: bold;
-  text-transform: capitalize;
+  font-size: 1.6rem;                    /* Al titulo de control de stock le damos un tamano relativamente grande */
+  font-weight: bold;                    /* En negrita */
+  margin-bottom: 35px;                  /* Con un espacio inferior */
   color: var(--colorHeaderNav);
-  margin-bottom: 35px;
 }
 
 .stock-control h3 {
-  font-weight: bold;
-  padding-bottom: 15px;
+  padding-bottom: 15px;                 /* Separamos cada contenedor de las barra de stock en la parte inferior */
+  font-weight: bold;                    /* En negrita */
+  
 }
 
-.stock-alert[data-alert-level="high"]::before {
-  margin-top: 10px;
-  width: 30%;
-  height: 30px;
-  content: attr(data-stock) " unidades";
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  background-color: var(--color-resaltado);
+.stock-alert[data-alert-level="high"]::before {   /* Todas las barras tendran */
+  margin-top: 10px;                               /* A la primera barra la separamos del titulo un poco mas */
+  display: flex;                                  /* Contenedores flex */
+  height: 30px;                                   /* Un alto fijo */
+  width: 20%;                                     /* Con anchos diferentes */
+  content: attr(data-stock) " unidades";          /* Insertando el atributo de stock */
+  align-items: center;                            /* centramos verticalmente */
+  justify-content: flex-end;                      /* Y horizontalmente tambien */
+  text-align: end;                                /* con el texto al final de la barra */
+  background-color: rgb(255, 67, 67);
   border: 1px solid black;
-  text-align: end;
 }
 
 .stock-alert[data-alert-level="medium"]::before {
-  width: 60%;
-  height: 30px;
-  content: attr(data-stock) " unidades";
   display: flex;
+  height: 30px;
+  width: 50%;
+  content: attr(data-stock) " unidades";
   align-items: center;
   justify-content: flex-end;
-  background-color: var(--colorHeaderNav);
-  border: 1px solid black;
   text-align: end;
+  background-color: rgb(255, 255, 53);
+  border: 1px solid black;
 }
 
 .stock-alert[data-alert-level="low"]::before {
-  width: 90%;
-  height: 30px;
-  content: attr(data-stock) " unidades";
   display: flex;
+  height: 30px;
+  width: 90%;
+  content: attr(data-stock) " unidades";
   align-items: center;
   justify-content: flex-end;
-  background-color: var(--color-cards);
-  border: 1px solid black;
   text-align: end;
+  background-color: greenyellow;
+  border: 1px solid black;
 }
 
 /* ESTILO DE COTIZACION DOLAR */
