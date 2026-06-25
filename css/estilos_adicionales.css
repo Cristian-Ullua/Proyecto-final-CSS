@@ -261,47 +261,49 @@ a:hover .material-icons {
   background-color: #bcb8b8;                /* Por ultimo al pasar el cursor cambie de color*/
 }
 
+
 /* ESTILO DE ACTIVIDAD RECIENTE */
 .activity {
-  background-color: var(--color-section);
-  width: 398px;
-  height: 220px;
-  border: 3px solid var(--color-body);
+  width: 398px;                                   /* Definimos el ancho y el alto de la pagina */
+  height: 220px;                                  
+  background-color: var(--color-section);         /* Con un color de fondo y un borde solido */
+  border: 3px solid var(--color-body);            
 }
 
 .activity h2 {
-  margin-top: 10px;
-  text-align: center;
-  color: black;
+  margin-top: 10px;                               /* A los titulos h2 le damos un margen superior y inferior */
   margin-bottom: 20px;
-  font-weight: bold;
-  font-size: 1.8rem;
+  font-size: 1.8rem;                              /* El tamaño de fuente va a ser relativamente grande */                            
+  text-align: center;                             /* Centrada horizontalmente */
+  font-weight: bold;                              /* En negrita */
+  color: black;                                 
 }
 
 table {
-  background-color: var(--color-body);
-  color: black;
-  width: 90%;
-  text-align: center;
-  border-collapse: collapse;
-  margin-left: 5%;
+  width: 90%;                                     /* A la tabla dentro del contenedor va a ocupar el 90% del ancho del mismo */
+  margin-left: 5%;                                /* Centramos la tabla, ya que al dejarlo al 5% del margen izquierdo tenemos lo mismo del lado derecho*/
+  border-collapse: collapse;                      /* Tambien se elimina los espacios entre los bordes de celdas */
+  background-color: var(--color-body);            /* le asignamo un color a la tabla */
+  text-align: center;                             /* Centramos el contenido de las celdas */
+  color: black;                                 
 }
 
 .activity thead th {
-  font-size: 1.4rem;
-  font-weight: bold;
+  font-size: 1.4rem;                              /* Al encabezado de damos un tamaño relativamente apenas mas grande */
+  font-weight: bold;                              /* En negrita */
 }
 
 .activity tbody tr:hover {
-  background: linear-gradient(90deg, var(--color-body)), var(--color-section);
-  color: var(--color-resaltado);
-  cursor: pointer;
+  cursor: pointer;                                                              /* Al pasar el cursor por las filas, cambiamos el cursor a una mano */
+  color: var(--color-resaltado);                                                /* Cambiando el color del texto */
+  background: linear-gradient(90deg, var(--color-body), var(--color-section));  /* Y le damos un degradado al fondo separando los 2 colores con una linea recta */
 }
 
 .activity td {
-  border-top: var(--color-section) solid 1px;
-  font-weight: bold
+  border-top: var(--color-section) solid 1px;                                   /* Y a las filas individuales, un borde en la parte superior */
+  font-weight: bold;                                                            /* Y en negrita el texto dentro de cada celda */
 }
+
 
 /* ESTILO DE TARJETAS*/
 .cards {
