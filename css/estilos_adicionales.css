@@ -15,7 +15,7 @@
   --color-section: #ffc480;        /* PARA LA SECCIONES */
   --color-cards: #ff7b00;          /* PARA LAS TARJETAS, FIJO POR EL COLOR DE LOS LOGOS DE LA EMPRESA */
 
-  --ancho-pantalla: 1000px;          /* ANCHO DE LA PANTALLA EN EL NAVEGADOR*/
+  --ancho-pantalla: 100%;          /* ANCHO DE LA PANTALLA EN EL NAVEGADOR*/
   --ancho-nav: 220px;                /* ANCHO DE LA BARRA DE NAVEGACION */
                                      /* MODIFICACIONES: CREAR VARIABLES PARA QUE LA WEB RESPONSIVE */
 }
@@ -23,12 +23,13 @@
 
 /* ESTILOS DE CABECERA PRINCIPAL*/
 .main-header{
-  width: var(--ancho-pantalla);
+  width: 100%;
   display: flex;                                /* Se genera un Flexbox para organizar los elementos internos */
   position: relative;                           /* Y posicionar elementos hijos de forma relativa */
   background-color: var(--colorHeaderNav);
   border: 1px solid var(--color-body);
   z-index: 10;
+  box-shadow:0 3px 8px rgba(0,0,0,.25);
 }
 
 .main-header img{
@@ -77,7 +78,8 @@
 
 /* ESTILO DEL CUERPO Y EL MENU PRINCIPAL */
 body {
-  width: var(--ancho-pantalla);                 /* Ajustamos el ancho del cuerpo de la pagina con 1000 px*/
+  width: 100%;
+  margin: 0;
   background-color: var(--color-body);          /* Y le asignamos el color de la variable del cuerpo */
 }
 
@@ -105,8 +107,10 @@ body {
 
 /* ESTILOS DE BARRA DE NAVEGACIÓN */
 main {
-  justify-content: flex-end;                                /* Y los elementos dentro del main los alineamos hacia el extremo derecho dejando al izquierdo la barra de busquedad*/
-  width: calc(var(--ancho-pantalla) - var(--ancho-nav));    /* El ancho del área principal del main sera, el ancho de la pagina 1000 px - 220px del ancho de la barra de busqueda */
+  display:flex;
+  flex-wrap:wrap;
+  width: calc(100% - var(--ancho-nav));
+  margin-left: var(--ancho-nav);
   background-color: var(--color-texto-header);              /* Definimos el color del fondo */
 }
 
@@ -158,14 +162,13 @@ a:hover .material-icons {
 
 
 /* ESTILOS DE CAJAS DE PRODUCTOS Y OFERTAS */
-.exclusive-offers {
-  display: flex;                                            /* La clases exclusive-offers seran contenedor flexible para organizar elementos en fila */
-  flex-direction: row;                                      /* Dirección principal: horizontal (fila) */
-  flex-wrap: nowrap;                                        /* No se va a permitir que los elementos se vayan a otra línea */
-  height: 450px;                                            /* Se define una altura fija */
-  width: calc(var(--ancho-pantalla) - var(--ancho-nav));    /* Y el ancho va a ser lo inverso a la barra de navegación o el restante*/
-  border: 1px solid var(--color-body);                      /* Se agrega borde */
-  text-align: center;                                       /* Y por ultimo se centra el texto dentro del contenedor */
+.exclusive-offers{
+    display:flex;
+    gap:10px;
+    width:100%;
+    height:auto;
+    text-align:left;
+    padding:10px 15px;
 }
 
 .exclusive-offers h2 {
@@ -192,9 +195,18 @@ a:hover .material-icons {
 
 /* ESTILO DE TAMAÑO DE IMAGENES DE LAS CAJAS */
 .art-offer {
-  margin-top: 30px;                           /* Dejamos un espacio en el margen superior de 30px */
+  margin-top: 20px;                           /* Dejamos un espacio en el margen superior de 30px */
   background-color: var(--color-body);        /* Le damos un color */
   border: solid 3px var(--color-section);     /* Y generamos un borde de otro color */
+  flex:1;
+  padding:10px;
+  border-radius:15px;
+  box-shadow:0 4px 10px rgba(0,0,0,.2);
+  transition:all .3s ease;
+}
+
+.art-offer:hover{
+    transform:translateY(-6px);
 }
 
 .art-offer header {
@@ -241,9 +253,9 @@ a:hover .material-icons {
 }
 
 .art-details>p {
-  font-size: xx-small;                        /* y al parrafos de los detalles, tambien le damos un texto pequeño */
-  margin-top: 15px;                           /* Separado en el margen superior del titulo de los detalles */
-  font-style: italic;                         /* En cursiva */
+  font-size:11px;          /* y al parrafos de los detalles, tambien le damos un texto pequeño */
+  margin-top:8px;          /* Separado en el margen superior del titulo de los detalles */
+  font-style:italic;       /* En cursiva */
 }
 
 .art-offer>footer>p {
@@ -251,36 +263,42 @@ a:hover .material-icons {
 }
 
 .art-offer button {
-  margin-top: 15px;                           /* Lo mismo hacemos con el boton de comprar */
-  padding: 5px;                               /* Le damos un borde interno */
-  border-radius: 5px;                         /* Y que sea redondeado esos bordes */
+  margin-top: 8px;                           /* Lo mismo hacemos con el boton de comprar */
+  padding: 6px 12px;                               /* Le damos un borde interno */
+  border-radius: 6px;                         /* Y que sea redondeado esos bordes */
+  cursor: pointer;
+  transition:.3s;
 }
 
 .art-offer button:hover {
-  background-color: #bcb8b8;                /* Por ultimo al pasar el cursor cambie de color*/
+  background-color: #ffb347;                /* Por ultimo al pasar el cursor cambie de color*/
+  transform:translateY(-8px);
+  transform:scale(1.08);
 }
 
 
 /* ESTILO DE ACTIVIDAD RECIENTE */
 .activity {
-  width: 398px;                                   /* Definimos el ancho y el alto de la pagina */
+  width: 50%;                                   /* Definimos el ancho y el alto de la pagina */
   height: 220px;
   background-color: var(--color-section);         /* Con un color de fondo y un borde solido */
   border: 3px solid var(--color-body);
+  box-shadow:0 4px 10px rgba(0,0,0,.2);
+  border-radius:12px;
 }
 
 .activity h2 {
   margin-top: 10px;                               /* A los titulos h2 le damos un margen superior y inferior */
   margin-bottom: 20px;
   font-size: 1.8rem;                              /* El tamaño de fuente va a ser relativamente grande */                            
-  text-align: center;                             /* Centrada horizontalmente */
+  text-align: left;                             /* Centrada horizontalmente */
   font-weight: bold;                              /* En negrita */
   color: black;
 }
 
-table {
-  width: 90%;                                     /* A la tabla dentro del contenedor va a ocupar el 90% del ancho del mismo */
-  margin-left: 5%;                                /* Centramos la tabla, ya que al dejarlo al 5% del margen izquierdo tenemos lo mismo del lado derecho*/
+.activity table {
+  width: 95%;                                    /* A la tabla dentro del contenedor va a ocupar el 90% del ancho del mismo */
+  margin: 10px auto;
   border-collapse: collapse;                      /* Tambien se elimina los espacios entre los bordes de celdas */
   background-color: var(--color-body);            /* le asignamo un color a la tabla */
   text-align: center;                             /* Centramos el contenido de las celdas */
@@ -290,6 +308,8 @@ table {
 .activity thead th {
   font-size: 1.4rem;                              /* Al encabezado de damos un tamaño relativamente apenas mas grande */
   font-weight: bold;                              /* En negrita */
+  text-align:left;
+  padding:8px;
 }
 
 .activity tbody tr:hover {
@@ -300,45 +320,62 @@ table {
 
 .activity td {
   border-top: var(--color-section) solid 1px;                                   /* Y a las filas individuales, un borde en la parte superior */
-  font-weight: bold;                                                            /* Y en negrita el texto dentro de cada celda */
+  font-weight: bold;
+  padding:8px;                                               /* Y en negrita el texto dentro de cada celda */
 }
 
 
 /* ESTILO DE TARJETAS*/
 .cards {
-  display: flex;                                  /* El contenedor de las tarjetas sera flexible */
-  width: 382px;                                   /* Definimos un ancho fijo y una altura automatica */
-  height: auto;
+  width:50%;
+  min-height:220px;
+  position:relative;
+  overflow:hidden;
   background-color: var(--color-section);
   border: 3px solid var(--color-body);
-  padding: 8px;                                   /* Le damos un espacio interno */
-  flex-direction: column;                         /* Los elementos hijos se apilan en columna */
-  align-items: flex-start;                        /* Y se alinean al inicio del eje horizontal */
+  box-shadow:0 4px 10px rgba(0,0,0,.2);
+  border-radius:12px;                 /* Y se alinean al inicio del eje horizontal */
 }
 
 .card {
-  display: flex;                                  /* Y a cada tarjeta tambien seran contenedores flexibles */
-  width: 60%;                                     /* Ocupara el 60% del ancho del contenedor padre */
+  position:absolute;
+  width:220px;
+  height:120px;                                   /* Ocupara el 60% del ancho del contenedor padre */
   background-color: var(--color-cards);
   color: var(--color-texto-header);
   border-radius: 8px;                             /* Redondeamos los bordes */
   border: 1px solid #9a9a9a;                    /* y le damos otro color diferente de la tarjeta */
-  flex-direction: column;                         /* Sus elementos se apilan en columna */
-  margin-top: 10px;                               /* Se separara en la parte inferior entre tarjetas */
-  margin-left: 20%;                               /* Desplaza la tarjeta hacia la derecha */
-  padding: 8px;
   transition: transform 0.3s ease;                /* Animación suave al aplicar transformaciones */
 }
 
+.card:nth-of-type(1){
+    left:20px;
+    top:60px;
+    z-index:1;
+}
+
+.card:nth-of-type(2){
+    left:110px;
+    top:75px;
+    z-index:2;
+}
+
+.card:nth-of-type(3){
+    left:200px;
+    top:90px;
+    z-index:3;
+}
+
 .card>img {
-  position: relative;                             /* A la marca de la tarjeta de damos una pósicion relativa */
-  left: 170px;                                    /* Posicionamos el logo de la empresa a la derecha inferior */
-  bottom: 5px;
+  width:45px;
+  position:absolute;
+  bottom:12px;
+  right:15px;
 }
 
 .cards>h2 {
   font-size: 1.8rem;                              /* Al tipo titulo de las "tarjeta preferidas" le damos un tamaño de texto relativamente grande */
-  text-align: center;                             /* Centra el título dentro del contenedor con un espacio en el margen superior*/
+  text-align: left;                             /* Centra el título dentro del contenedor con un espacio en el margen superior*/
   margin-bottom: 10px;
   font-weight: bold;                              /*  En negrita */
 }
@@ -357,11 +394,13 @@ table {
 /* ESTILO DE CONTROL DE STOCK */
 .stock-control {
     position: relative;                         /* Indicamos una posicion relativa, para despues posicionar elementos hijos de forma absoluta */
-    width: 398px;                               /* Definimos el ancho y el alto del contenedor */
+    width: 50%;                               /* Definimos el ancho y el alto del contenedor */
     height: 265px;
     padding: 5px;
     background-color: var(--color-body);
     border: 3px solid var(--color-section);
+    border-radius:12px;
+    box-shadow:0 4px 10px rgba(0,0,0,.2);
 }
 
 .stock-control>h2 {
@@ -369,6 +408,7 @@ table {
   font-weight: bold;                    /* En negrita */
   margin-bottom: 35px;                  /* Con un espacio inferior */
   color: var(--colorHeaderNav);
+  text-align: left;
 }
 
 .stock-control h3 {
@@ -416,18 +456,23 @@ table {
 
 /* ESTILO DE COTIZACION DOLAR */
 .currency {
-  width: 380px;                                 /* Se define el ancho y el alto del contenedor */
+  width: 35%;                                 /* Se define el ancho y el alto del contenedor */
   height: 265px;
-  text-align: center;                           /* Se centra el contenido */
+  text-align: left;
   font-size: 1.2rem;                            /* Con el titulo al mismo tamaño que control de stock */
   color: var(--colorHeaderNav);
   margin-left: 2px;                             /* Margen izquierdo muy pequeño para separarlo del control de stock */
   background-color: var(--color-body);
   border: 3px solid var(--color-section);
+  border-radius:12px;
+  box-shadow:0 4px 10px rgba(0,0,0,.2);
 }
 
 .currency > h2 {
-  margin-bottom: 65px;           /* al contenido lo bajamos muy poco contra el elemento anterior*/
+  margin:0;
+  padding:12px 15px;
+  text-align:left;
+  line-height:1;
   font-weight: bold;             /* En negrita */
 }
 
@@ -487,28 +532,56 @@ NEGRO: DOLAR MEP */
 
 
 /*AYUDA EN LINEA*/
-.contact-support {
-  display: flex;                                    /* Se define al contenedor flexible */
-  position: fixed;                                  /* Mantiene el elemento fijo en la pantalla, aunque se haga scroll */
-  bottom: 70px;                                     /* Separación levemente desde la parte inferior y casi sobre el borde derecho */
-  left: 880px;
-  border-radius: 10px;                              /* La cual tendra el boton bordes redondeados */
-  background-color: VAR(--color-cards);
-  border: solid 1px var(--color-texto-header);
-  color: var(--color-texto-header);
-  z-index: 1000;                                    /* Y por ultimo asegurar que quede por encima de cualquier elemento */
+.contact-support{
+    position:fixed;
+    right:15px;
+    bottom:15px;
+    display:flex;
+    align-items:center;
+    gap:6px;
+    padding:10px 14px;
+    background:#ff7b00;
+    color:white;
+    border-radius:30px;
+    box-shadow:0 4px 12px rgba(0,0,0,.25);
+    z-index:1000;
+    transition:.3s;
 }
 
-.contact-support:hover {
-  cursor: pointer;                                                                /* Cambia el cursor a "mano" indicando que es clickeable */
-  color: var(--color-resaltado);
-  background-color: var(--color-cards);
-  background: linear-gradient(45deg, var(--color-body), var(--color-section));   /* Y aplicamos un degradado cuando pasamos el cursor */
+.contact-support:hover{
+    background:#fb2e02;
+    transform:scale(1.08);
+    cursor:pointer;
+}
+
+.contact-support .material-icons-outlined{
+    color:white;
+}
+
+.contact-text{
+    color:white;
+    font-weight:bold;
+}
+
+.contact-support{
+    animation:flotar 2s infinite;
+}
+
+@keyframes flotar{
+    0%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(-4px);
+    }
+    100%{
+        transform:translateY(0);
+    }
 }
 
 /* ESTILO DE FOOTER */
 .main-footer {
-    width: var(--ancho-pantalla);                   /* El pie tendra el ancho de la pantalla y no afectara a la barra de navegacion por que esta sobre el pie */
+    width:100%;
     height: 64px;                                   /* Y tambien definimos un alto fijo */
     padding: 32px;
     text-align: center;                             /* Centramos horizontalmente el texto */
