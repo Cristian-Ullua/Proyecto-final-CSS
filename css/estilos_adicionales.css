@@ -1,7 +1,7 @@
 /***********************************************
- GRUPO N° 33
- Autores: YANINA VELAZQUE - ULLUA CRISTIAN
-
+/ GRUPO N° 33                                  /
+/ Autores: YANINA VELAZQUEZ - ULLUA CRISTIAN   /
+/                                              /
 ***********************************************/
 
 /* ORGANIZAR LAS DECLARACIONES EN BLOQUES*/
@@ -21,15 +21,15 @@
 }
 
 
-/* ESTILOS DE CABECERA PRINCIPAL*/ 
+/* ESTILOS DE CABECERA PRINCIPAL*/
 .main-header{
-  width: var(--ancho-pantalla);                 
+  width: var(--ancho-pantalla);
   display: flex;                                /* Se genera un Flexbox para organizar los elementos internos */
   position: relative;                           /* Y posicionar elementos hijos de forma relativa */
-  background-color: var(--colorHeaderNav);      
-  border: 1px solid var(--color-body);          
-  z-index: 10; 
-}                   
+  background-color: var(--colorHeaderNav);
+  border: 1px solid var(--color-body);
+  z-index: 10;
+}
 
 .main-header img{
   position: relative;                           /* La imagen se posiciona relativa a su contenedor */
@@ -43,7 +43,7 @@
 .main-header>h1 {
   position: absolute;                           /* Al titulo "FDW - PROYECTO CSSL" se le da una posición fija en la cabezera */
   margin-left: 40%;                             /* Dezplazada 40% hacia la derecha */
-  color: var(--color-texto-header);             
+  color: var(--color-texto-header);
   align-self: center;                           /* Se centra verticalmente dentro del contenedor flex */
   order: 2;                                     /* Va a ser el segundo en el orden del Flexbox */
 }
@@ -54,7 +54,7 @@
   padding: 10px;                                /* Con un espaciado interno*/
   right: 1px;                                   /* Pegado casi al borde derecho */
   justify-content: center;                      /* Centramos el contenido dentro del contenedor */
-  color: var(--color-texto-header);             
+  color: var(--color-texto-header);
   order: 3;                                     /* Y con posicion 3ra en el flexbox */
 }
 
@@ -108,7 +108,6 @@ main {
   justify-content: flex-end;                                /* Y los elementos dentro del main los alineamos hacia el extremo derecho dejando al izquierdo la barra de busquedad*/
   width: calc(var(--ancho-pantalla) - var(--ancho-nav));    /* El ancho del área principal del main sera, el ancho de la pagina 1000 px - 220px del ancho de la barra de busqueda */
   background-color: var(--color-texto-header);              /* Definimos el color del fondo */
-  
 }
 
 main section{
@@ -179,7 +178,7 @@ a:hover .material-icons {
   text-align: center;                                       /* Luego al texto lo centramos*/
   font-size: 1.8rem;                                        /* Con un tamaño de fuente relativamente grande */
   text-transform: uppercase;                                /* Todo en mayúsculas */
-  color: var(--color-texto-header);                         
+  color: var(--color-texto-header);
   animation: titulo 10s infinite;                           /* Y terminamos Aplicando una animación con duración de 10seg, de repetición infinita */
 }
 
@@ -214,7 +213,7 @@ a:hover .material-icons {
   margin: 5px;                                /* que tendra un margen */
   font-size: 20px;                            /* Y un tamaño diferente al del precio actual o en oferta */
   text-decoration: line-through;              /* Lo tachamos para indicar que es un precio anterior */
-  color: var(--color-resaltado);              
+  color: var(--color-resaltado);
 }
 
 .art-offer h3 {
@@ -238,7 +237,7 @@ a:hover .material-icons {
 .art-details>h4 {
   font-size: x-small;                         /* A los titulos h4 de los detalles, le damos un texto muy pequeño */
   margin-top: 10px;                           /* Separación del margen superior */
-  font-weight: bold;                          /* En negrita */ 
+  font-weight: bold;                          /* En negrita */
 }
 
 .art-details>p {
@@ -265,9 +264,9 @@ a:hover .material-icons {
 /* ESTILO DE ACTIVIDAD RECIENTE */
 .activity {
   width: 398px;                                   /* Definimos el ancho y el alto de la pagina */
-  height: 220px;                                  
+  height: 220px;
   background-color: var(--color-section);         /* Con un color de fondo y un borde solido */
-  border: 3px solid var(--color-body);            
+  border: 3px solid var(--color-body);
 }
 
 .activity h2 {
@@ -276,7 +275,7 @@ a:hover .material-icons {
   font-size: 1.8rem;                              /* El tamaño de fuente va a ser relativamente grande */                            
   text-align: center;                             /* Centrada horizontalmente */
   font-weight: bold;                              /* En negrita */
-  color: black;                                 
+  color: black;
 }
 
 table {
@@ -285,7 +284,7 @@ table {
   border-collapse: collapse;                      /* Tambien se elimina los espacios entre los bordes de celdas */
   background-color: var(--color-body);            /* le asignamo un color a la tabla */
   text-align: center;                             /* Centramos el contenido de las celdas */
-  color: black;                                 
+  color: black;
 }
 
 .activity thead th {
@@ -309,10 +308,10 @@ table {
 .cards {
   display: flex;                                  /* El contenedor de las tarjetas sera flexible */
   width: 382px;                                   /* Definimos un ancho fijo y una altura automatica */
-  height: auto;                                   
+  height: auto;
   background-color: var(--color-section);
   border: 3px solid var(--color-body);
-  padding: 8px;                                   /* Le damos un espacio interno */ 
+  padding: 8px;                                   /* Le damos un espacio interno */
   flex-direction: column;                         /* Los elementos hijos se apilan en columna */
   align-items: flex-start;                        /* Y se alinean al inicio del eje horizontal */
 }
@@ -320,33 +319,33 @@ table {
 .card {
   display: flex;                                  /* Y a cada tarjeta tambien seran contenedores flexibles */
   width: 60%;                                     /* Ocupara el 60% del ancho del contenedor padre */
-  background-color: var(--color-cards); 
-  color: var(--color-texto-header);     
+  background-color: var(--color-cards);
+  color: var(--color-texto-header);
   border-radius: 8px;                             /* Redondeamos los bordes */
   border: 1px solid #9a9a9a;                    /* y le damos otro color diferente de la tarjeta */
   flex-direction: column;                         /* Sus elementos se apilan en columna */
   margin-top: 10px;                               /* Se separara en la parte inferior entre tarjetas */
   margin-left: 20%;                               /* Desplaza la tarjeta hacia la derecha */
-  padding: 8px;                  
+  padding: 8px;
   transition: transform 0.3s ease;                /* Animación suave al aplicar transformaciones */
 }
 
 .card>img {
   position: relative;                             /* A la marca de la tarjeta de damos una pósicion relativa */
   left: 170px;                                    /* Posicionamos el logo de la empresa a la derecha inferior */
-  bottom: 5px;                                    
+  bottom: 5px;
 }
 
 .cards>h2 {
   font-size: 1.8rem;                              /* Al tipo titulo de las "tarjeta preferidas" le damos un tamaño de texto relativamente grande */
   text-align: center;                             /* Centra el título dentro del contenedor con un espacio en el margen superior*/
-  margin-bottom: 10px;            
+  margin-bottom: 10px;
   font-weight: bold;                              /*  En negrita */
 }
 
 .card>h3, p{
-  margin-top: 5px;                               
-  margin-left: 10px;                             
+  margin-top: 5px;
+  margin-left: 10px;
 }
 
 .card:hover {
@@ -359,10 +358,10 @@ table {
 .stock-control {
     position: relative;                         /* Indicamos una posicion relativa, para despues posicionar elementos hijos de forma absoluta */
     width: 398px;                               /* Definimos el ancho y el alto del contenedor */
-    height: 265px;                                
-    padding: 5px;              
+    height: 265px;
+    padding: 5px;
     background-color: var(--color-body);
-    border: 3px solid var(--color-section);  
+    border: 3px solid var(--color-section);
 }
 
 .stock-control>h2 {
@@ -418,13 +417,13 @@ table {
 /* ESTILO DE COTIZACION DOLAR */
 .currency {
   width: 380px;                                 /* Se define el ancho y el alto del contenedor */
-  height: 265px;                                
+  height: 265px;
   text-align: center;                           /* Se centra el contenido */
   font-size: 1.2rem;                            /* Con el titulo al mismo tamaño que control de stock */
-  color: var(--colorHeaderNav);                 
+  color: var(--colorHeaderNav);
   margin-left: 2px;                             /* Margen izquierdo muy pequeño para separarlo del control de stock */
-  background-color: var(--color-body);          
-  border: 3px solid var(--color-section);       
+  background-color: var(--color-body);
+  border: 3px solid var(--color-section);
 }
 
 .currency > h2 {
@@ -439,11 +438,11 @@ table {
   margin-top: 10px;             /* Y dejamos entre cada texto muy pequeño */
   font-size: 15px;              /* Definimos el tamaño del texto */
   font-weight: bold;            /* En negrita */
-  color: black;                
+  color: black;
 }
 
 
-/* SIMULACIÓN FLUJO 
+/* SIMULACIÓN FLUJO
 VERDE: DOLAR OFICIAL,
 AZUL: DOLAR BLUE,
 NEGRO: DOLAR MEP */
@@ -458,7 +457,7 @@ NEGRO: DOLAR MEP */
 
 .loading-item{
     width: 35px;                            /* Cada barra de tendra un ancho y alto fijo*/
-    height: 35px;                           
+    height: 35px;
     border-radius: 0;                       /* Y sin bordes en las barras */
     animation: dolar 1s linear infinite;    /* Por ultimo aplicamos la animación con duración de 1s, de forma lineal y infinitamente */
 }
@@ -492,28 +491,27 @@ NEGRO: DOLAR MEP */
   display: flex;                                    /* Se define al contenedor flexible */
   position: fixed;                                  /* Mantiene el elemento fijo en la pantalla, aunque se haga scroll */
   bottom: 70px;                                     /* Separación levemente desde la parte inferior y casi sobre el borde derecho */
-  left: 880px;                                    
+  left: 880px;
   border-radius: 10px;                              /* La cual tendra el boton bordes redondeados */
-  background-color: VAR(--color-cards);             
-  border: solid 1px var(--color-texto-header);     
+  background-color: VAR(--color-cards);
+  border: solid 1px var(--color-texto-header);
   color: var(--color-texto-header);
   z-index: 1000;                                    /* Y por ultimo asegurar que quede por encima de cualquier elemento */
 }
 
 .contact-support:hover {
   cursor: pointer;                                                                /* Cambia el cursor a "mano" indicando que es clickeable */
-  color: var(--color-resaltado);                                                 
+  color: var(--color-resaltado);
   background-color: var(--color-cards);
   background: linear-gradient(45deg, var(--color-body), var(--color-section));   /* Y aplicamos un degradado cuando pasamos el cursor */
-  
 }
 
 /* ESTILO DE FOOTER */
 .main-footer {
     width: var(--ancho-pantalla);                   /* El pie tendra el ancho de la pantalla y no afectara a la barra de navegacion por que esta sobre el pie */
     height: 64px;                                   /* Y tambien definimos un alto fijo */
-    padding: 32px;                                  
+    padding: 32px;
     text-align: center;                             /* Centramos horizontalmente el texto */
-    background-color: var(--color-section);         
+    background-color: var(--color-section);
     border-top: 3px solid var(--color-body);
 }
