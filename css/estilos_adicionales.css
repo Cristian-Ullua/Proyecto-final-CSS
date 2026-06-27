@@ -8,6 +8,7 @@
   VARIABLES Y ESTILOS GENERALES
 ==================================================*/
 
+
 :root {
   --colorHeaderNav: #ffa200;       /* VARIABLE DEL COLOR PARA LA BARRA DE NAVEGACIÓN */
   --color-body: #fffaf4;           /* PARA EL CUERPO DE LA PAGINA */
@@ -213,11 +214,15 @@ a:hover .material-icons {
   animation: titulo 10s infinite;                           /* Y terminamos Aplicando una animación con duración de 10seg, de repetición infinita */
 }
 
-/* Animación del título en movimiento  "OFERTAS PARA TI"*/
+
+/*=====================================
+  ANIMACIÓN DEL TÍTULO DE OFERTAS
+=====================================*/
+
 @keyframes titulo {
-  0%   { left: 240px; }                                     /* Iniciamos a la izquierda el contenedor bien pegado a la barra de búsqueda */
-  50%  { left: 500px; }                                     /* Llegamos hacia el otro extremo */
-  100% { left: 240px; }                                     /* Y volvemos hacia la izquierdfa de nuevo */
+  0%   { left: 370px; }                                     /* Iniciamos a la izquierda el contenedor bien pegado a la barra de búsqueda */
+  50%  { left: 560px; }                                     /* Llegamos hacia el otro extremo */
+  100% { left: 370px; }                                     /* Y volvemos hacia la izquierdfa de nuevo */
 }
 
 
@@ -480,6 +485,7 @@ encabezados, botones y efecto hover.
   z-index: 4;                                   /* La coloca por encima de otros elementos */
 }
 
+
 /*==================================================
   CONTROL DE STOCK
 ==================================================*/
@@ -674,19 +680,30 @@ encabezados, botones y efecto hover.
     animation:flotar 2s infinite;
 }
 
+/*=====================================
+  ANIMACIÓN DEL BOTÓN DE SOPORTE
+=====================================*/
+
+/* Genera un efecto de flotación continua
+   para destacar el acceso a la ayuda en línea. */
+
 @keyframes flotar{
     0%{
-        transform:translateY(0);
+        transform:translateY(0);           /* Inicio */
     }
     50%{
-        transform:translateY(-4px);
+        transform:translateY(-4px);         /* Movimiento ascendente */
     }
     100%{
-        transform:translateY(0);
+        transform:translateY(0);           /* Regreso al punto inicial */
     }
 }
 
-/* ESTILO DE FOOTER */
+
+/*=====================================
+    PIE DE PÁGINA
+=====================================*/
+
 .main-footer {
     width:100%;
     height: 64px;                                   /* Y tambien definimos un alto fijo */
@@ -699,9 +716,11 @@ encabezados, botones y efecto hover.
 
 /********************************************************************************/
 
-/* MEDIA QUERIES */
+/*=====================================
+    MEDIA QUERIES
+=====================================*/
 
-/* DISEÑO RESPONSIVE - MEDIA QUERIES
+/* DISEÑO RESPONSIVE
 
   En esta sección se adapta la interfaz para distintos
   tamaños de pantalla sin modificar el HTML.
@@ -710,7 +729,6 @@ encabezados, botones y efecto hover.
   tamaños de texto y distribución de los elementos para
   mantener una correcta visualización en computadoras,
   tablets y teléfonos móviles. */
-
 
 
 /***********************************************
@@ -731,6 +749,26 @@ encabezados, botones y efecto hover.
     .main-header > h1{
         margin-left:32%;
         font-size:1.6rem;
+    }
+
+    .main-menu{
+    width:100%;
+    position:relative;
+    margin:0;
+    padding:15px;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:20px;
+    }
+
+    .menu-group{
+    min-width:180px;
+    }
+
+    main{
+    width:100%;
+    margin-left:0;
     }
 
     .activity,
@@ -758,8 +796,6 @@ encabezados, botones y efecto hover.
 }
 
 
-
-
 /***********************************************
 /                 CELULARES                    /
 ***********************************************/
@@ -779,6 +815,31 @@ encabezados, botones y efecto hover.
     .main-header img{
         width:120px;
         height:auto;
+    }
+
+    .main-menu{
+    display:block;
+    width:100%;
+    padding:10px;
+    }
+
+    .menu-group{
+    margin-bottom:15px;
+    }
+
+    .menu-group h2{
+    font-size:1rem;
+    text-align:center;
+    }
+
+    .menu-group a{
+    margin-left:0;
+    justify-content:center;
+    }
+
+    main{
+    width:100%;
+    margin-left:0;
     }
 
     .activity table{
