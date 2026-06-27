@@ -771,6 +771,19 @@ encabezados, botones y efecto hover.
     margin-left:0;
     }
 
+    .exclusive-offers h2{
+    left:220px;
+    font-size:1.4rem;
+    padding:8px 15px;
+    }
+
+    @keyframes titulo{
+    0%   { left:220px; }
+    50%  { left:520px; }
+    100% { left:220px; }
+    }
+
+
     .activity,
     .cards{
         width:100%;
@@ -823,6 +836,19 @@ encabezados, botones y efecto hover.
     padding:10px;
     }
 
+    .exclusive-offers h2{
+    left:10px;
+    top:8px;
+    font-size:1rem;
+    padding:6px 12px;
+    }
+
+    @keyframes titulo{
+    0%   { left:10px; }
+    50%  { left:120px; }
+    100% { left:10px; }
+    }
+
     .menu-group{
     margin-bottom:15px;
     }
@@ -842,6 +868,7 @@ encabezados, botones y efecto hover.
     margin-left:0;
     }
 
+    
     .activity table{
         font-size:.8rem;
     }
