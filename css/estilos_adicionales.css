@@ -4,9 +4,10 @@
 /                                              /
 ***********************************************/
 
-/* ORGANIZAR LAS DECLARACIONES EN BLOQUES*/
+/*==================================================
+  VARIABLES Y ESTILOS GENERALES
+==================================================*/
 
-/* ESTILOS GENERALES*/
 :root {
   --colorHeaderNav: #ffa200;       /* VARIABLE DEL COLOR PARA LA BARRA DE NAVEGACIÓN */
   --color-body: #fffaf4;           /* PARA EL CUERPO DE LA PAGINA */
@@ -21,7 +22,10 @@
 }
 
 
-/* ESTILOS DE CABECERA PRINCIPAL*/
+/*==================================================
+  CABECERA PRINCIPAL
+==================================================*/
+
 .main-header{
   width: 100%;
   display: flex;                                /* Se genera un Flexbox para organizar los elementos internos */
@@ -35,15 +39,15 @@
 .main-header img{
   position: relative;                           /* La imagen se posiciona relativa a su contenedor */
   margin-left: 5%;                              /* Con un margen a la izquierda del 5% del ancho del contenedor*/
-  margin-top: 0.4%;                             /* Dezplazada 0,4% hacia abajo*/
+  margin-top: 0.4%;                             /* Desplazada 0,4% hacia abajo*/
   height: 90%;                                  /* Y la imagen ocupa casi toda la altura del header */
   order: 1;                                     /* La imagen "100% gratis" va a ser el primer elemento del encabezado*/
   filter: saturate(200%);                       /* Con el doble de color de saturación */
 }
 
 .main-header>h1 {
-  position: absolute;                           /* Al titulo "FDW - PROYECTO CSSL" se le da una posición fija en la cabezera */
-  margin-left: 40%;                             /* Dezplazada 40% hacia la derecha */
+  position: absolute;                           /* Al titulo "FDW - PROYECTO CSSL" se le da una posición fija en la cabecera */
+  margin-left: 40%;                             /* Desplazada 40% hacia la derecha */
   color: var(--color-texto-header);
   align-self: center;                           /* Se centra verticalmente dentro del contenedor flex */
   order: 2;                                     /* Va a ser el segundo en el orden del Flexbox */
@@ -64,7 +68,10 @@
 }                                               /* "else-in-out" es una opcion para empezar la animacion suave, acelerarla a la mitad y despues terminar suavemente la animacion */
 
 
-/* ANIMACION ICONO CAMPANA */
+/*==================================================
+  ANIMACIÓN DEL ÍCONO DE NOTIFICACIONES
+==================================================*/
+
 @keyframes shake {
   0% { transform: translateX(0);}                             /* Empieza en su posicion original */
 
@@ -76,10 +83,14 @@
 }
 
 
-/* ESTILO DEL CUERPO Y EL MENU PRINCIPAL */
+/*==================================================
+  CUERPO Y MENÚ LATERAL
+==================================================*/
+
 body {
+  max-width: 1000px;
   width: 100%;
-  margin: 0;
+  margin: auto;
   background-color: var(--color-body);          /* Y le asignamos el color de la variable del cuerpo */
 }
 
@@ -105,7 +116,10 @@ body {
 }
 
 
-/* ESTILOS DE BARRA DE NAVEGACIÓN */
+/*==================================================
+  MENÚ DE NAVEGACIÓN LATERAL
+==================================================*/
+
 main {
   display:flex;
   flex-wrap:wrap;
@@ -124,7 +138,7 @@ main section{
     width: var(--ancho-nav);                                /* El ancho de la barra sera de 220px */
     padding: 0px 10px;                                      /* Espaciado interno horizontal */
     position: relative;                                     /* Posicionamiento relativo para poder ajustar con top/left */
-    top: 1px;                                               /* Separamos a 1px de la cabezera */
+    top: 1px;                                               /* Separamos a 1px de la cabecera */
     left: 0px;                                              /* Ademas, se mantendra pegada a la izquierda del body */
     background-color: var(--colorHeaderNav);                /* Definir el color */
     overflow-y: visible                                     /* Y por ultimo el contenido que se desborde verticalmente será visible */
@@ -135,12 +149,15 @@ main section{
 }
 
 
-/* ESTILOS DE ENLACES */
+/*==================================================
+  ENLACES DE NAVEGACIÓN
+==================================================*/
+
 a {
   display: flex;                                            /* Se convierte los enlaces en un contenedor flexible */
   padding: 3px 1px;                                         /* Espaciado interno: 3px arriba/abajo y 1px izquierda/derecha */
   color: var(--color-texto-header);                         /* Definimos el color del texto */
-  text-decoration: none;                                    /* Y se 0elimina el subrayado para que no aparesca al pasar el cursor */
+  text-decoration: none;                                    /* Y se 0elimina el subrayado para que no aparezca al pasar el cursor */
 }
 
 a>.menu-text {
@@ -161,25 +178,36 @@ a:hover .material-icons {
 }
 
 
-/* ESTILOS DE CAJAS DE PRODUCTOS Y OFERTAS */
+/*==================================================
+  OFERTAS EXCLUSIVAS
+==================================================
+
+  Se diseñan las tarjetas de productos, el título animado,
+  la imagen del artículo, el precio, la descripción y los
+  botones de compra. */
+
 .exclusive-offers{
     display:flex;
     gap:10px;
     width:100%;
     height:auto;
     text-align:left;
-    padding:10px 15px;
+    padding-top: 30px;
 }
 
 .exclusive-offers h2 {
-  width: 350px;                                             /* Ancho fijo del título */
-  left: 430px;                                              /* Posición horizontal inicial */
-  position: absolute;                                       /* Se posiciona de forma absoluta dentro del contenedor */
+  width: auto;                                             /* Ancho fijo del título */
+  position: absolute;                                      /* Se posiciona de forma absoluta dentro del contenedor */
+  left: 20px;                                              /* Posición horizontal inicial */
+  top: 80px;
+  margin: 0;
+  padding: 8px 10px;
   border-bottom: none;                                      /* ademas se elimina el borde inferior */
   border-radius: 50px;                                      /* Y redondeados los bordes */
   background-color: var(--color-resaltado);                 /* por ultimo le asignamos un color de fondo */
-  text-align: center;                                       /* Luego al texto lo centramos*/
+  text-align: left;                                       /* Luego al texto lo centramos*/
   font-size: 1.8rem;                                        /* Con un tamaño de fuente relativamente grande */
+  z-index:10;
   text-transform: uppercase;                                /* Todo en mayúsculas */
   color: var(--color-texto-header);
   animation: titulo 10s infinite;                           /* Y terminamos Aplicando una animación con duración de 10seg, de repetición infinita */
@@ -187,19 +215,22 @@ a:hover .material-icons {
 
 /* Animación del título en movimiento  "OFERTAS PARA TI"*/
 @keyframes titulo {
-  0%   { left: 230px; }                                     /* Iniciamos a la izquierda el contenedor bien pegado a la barra de busquedad */
-  50%  { left: 640px; }                                     /* Llegamos hacia el otro extremo */
-  100% { left: 230px; }                                     /* Y volvemos hacia la izquierdfa de nuevo */
+  0%   { left: 240px; }                                     /* Iniciamos a la izquierda el contenedor bien pegado a la barra de búsqueda */
+  50%  { left: 500px; }                                     /* Llegamos hacia el otro extremo */
+  100% { left: 240px; }                                     /* Y volvemos hacia la izquierdfa de nuevo */
 }
 
 
-/* ESTILO DE TAMAÑO DE IMAGENES DE LAS CAJAS */
+/*==================================================
+  TARJETAS DE PRODUCTOS
+==================================================*/
+
 .art-offer {
   margin-top: 20px;                           /* Dejamos un espacio en el margen superior de 30px */
   background-color: var(--color-body);        /* Le damos un color */
   border: solid 3px var(--color-section);     /* Y generamos un borde de otro color */
   flex:1;
-  padding:10px;
+  padding:6px;
   border-radius:15px;
   box-shadow:0 4px 10px rgba(0,0,0,.2);
   transition:all .3s ease;
@@ -231,7 +262,7 @@ a:hover .material-icons {
 .art-offer h3 {
   margin: 10px;                               /* Margen alrededor */
   font-size: 19px;                            /* Tamaño de fuente medio */
-  text-align: center;                         /* Centrado horizontal */
+  text-align: left;                         /* izquierda */
   height: 55px;                               /* Altura fija */
   font-weight: bold;                          /* Negrita */
 }
@@ -239,6 +270,8 @@ a:hover .material-icons {
 .art-offer>img {
   width: 120px;                               /* Al imagen de la caja le damos una proporcion cuadrada */
   height: 120px;
+  display:block;
+  margin:15px auto;
 }
 
 .art-details{
@@ -258,12 +291,19 @@ a:hover .material-icons {
   font-style:italic;       /* En cursiva */
 }
 
-.art-offer>footer>p {
-  margin-top: 10px;                           /* Y al pie del articulo en oferta lo separamos del margen superior superior*/
+.art-offer footer{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-top:10px;
 }
 
-.art-offer button {
-  margin-top: 8px;                           /* Lo mismo hacemos con el boton de comprar */
+.art-offer footer p {
+  margin: 0;                           /* Y al pie del articulo en oferta lo separamos del margen superior superior*/
+}
+
+.art-offer footer button{
+  margin:0;                         /* Lo mismo hacemos con el boton de comprar */
   padding: 6px 12px;                               /* Le damos un borde interno */
   border-radius: 6px;                         /* Y que sea redondeado esos bordes */
   cursor: pointer;
@@ -272,12 +312,19 @@ a:hover .material-icons {
 
 .art-offer button:hover {
   background-color: #ffb347;                /* Por ultimo al pasar el cursor cambie de color*/
-  transform:translateY(-8px);
-  transform:scale(1.08);
+  transform:translateY(-8px) scale(1.08);
 }
 
 
-/* ESTILO DE ACTIVIDAD RECIENTE */
+/*=====================================
+    PANEL DE ACTIVIDAD RECIENTE
+=====================================
+
+Diseño de la tabla de movimientos,
+encabezados, botones y efecto hover.
+
+*/
+
 .activity {
   width: 50%;                                   /* Definimos el ancho y el alto de la pagina */
   height: 220px;
@@ -288,17 +335,17 @@ a:hover .material-icons {
 }
 
 .activity h2 {
-  margin-top: 10px;                               /* A los titulos h2 le damos un margen superior y inferior */
-  margin-bottom: 20px;
-  font-size: 1.8rem;                              /* El tamaño de fuente va a ser relativamente grande */                            
-  text-align: left;                             /* Centrada horizontalmente */
-  font-weight: bold;                              /* En negrita */
-  color: black;
+  margin:0;
+  padding:12px 15px;
+  font-size:1.8rem;
+  text-align:left;
+  font-weight:bold;
 }
 
 .activity table {
-  width: 95%;                                    /* A la tabla dentro del contenedor va a ocupar el 90% del ancho del mismo */
-  margin: 10px auto;
+  width: 95%;
+  height: 30%;                                   /* A la tabla dentro del contenedor va a ocupar el 90% del ancho del mismo */
+  margin: 0 auto;
   border-collapse: collapse;                      /* Tambien se elimina los espacios entre los bordes de celdas */
   background-color: var(--color-body);            /* le asignamo un color a la tabla */
   text-align: center;                             /* Centramos el contenido de las celdas */
@@ -309,7 +356,19 @@ a:hover .material-icons {
   font-size: 1.4rem;                              /* Al encabezado de damos un tamaño relativamente apenas mas grande */
   font-weight: bold;                              /* En negrita */
   text-align:left;
-  padding:8px;
+  padding:4px;
+}
+
+.activity th:nth-child(1){
+    width:20%;
+}
+
+.activity th:nth-child(2){
+    width:60%;
+}
+
+.activity th:nth-child(3){
+    width:20%;
 }
 
 .activity tbody tr:hover {
@@ -321,11 +380,40 @@ a:hover .material-icons {
 .activity td {
   border-top: var(--color-section) solid 1px;                                   /* Y a las filas individuales, un borde en la parte superior */
   font-weight: bold;
-  padding:8px;                                               /* Y en negrita el texto dentro de cada celda */
+  padding:4px;                                               /* Y en negrita el texto dentro de cada celda */
+}
+
+.activity td button{
+    width:42px;
+    height:22px;
+    border:1px solid #666;
+    background:#fff;
+    border-radius:2px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    cursor:pointer;
+}
+
+.activity td button .material-icons-outlined{
+    font-size:16px;
+    width:auto;
+    height:auto;
+}
+
+.material-icons-outlined{
+    vertical-align:middle;
 }
 
 
-/* ESTILO DE TARJETAS*/
+/*=====================================
+    TARJETAS PREFERIDAS
+=====================================
+
+  Se posicionan las tarjetas bancarias mediante
+  posicionamiento absoluto para generar un efecto
+  de superposición similar al de una billetera digital.*/
+
 .cards {
   width:50%;
   min-height:220px;
@@ -334,12 +422,12 @@ a:hover .material-icons {
   background-color: var(--color-section);
   border: 3px solid var(--color-body);
   box-shadow:0 4px 10px rgba(0,0,0,.2);
-  border-radius:12px;                 /* Y se alinean al inicio del eje horizontal */
+  border-radius:12px;              /* Y se alinean al inicio del eje horizontal */
 }
 
 .card {
   position:absolute;
-  width:220px;
+  width:190px;
   height:120px;                                   /* Ocupara el 60% del ancho del contenedor padre */
   background-color: var(--color-cards);
   color: var(--color-texto-header);
@@ -350,19 +438,19 @@ a:hover .material-icons {
 
 .card:nth-of-type(1){
     left:20px;
-    top:60px;
+    top:55px;
     z-index:1;
 }
 
 .card:nth-of-type(2){
-    left:110px;
-    top:75px;
+    left:80px;
+    top:70px;
     z-index:2;
 }
 
 .card:nth-of-type(3){
-    left:200px;
-    top:90px;
+    left:170px;
+    top:85px;
     z-index:3;
 }
 
@@ -374,13 +462,15 @@ a:hover .material-icons {
 }
 
 .cards>h2 {
+  margin:0;
+  padding:12px 15px;
   font-size: 1.8rem;                              /* Al tipo titulo de las "tarjeta preferidas" le damos un tamaño de texto relativamente grande */
-  text-align: left;                             /* Centra el título dentro del contenedor con un espacio en el margen superior*/
-  margin-bottom: 10px;
+  text-align: left;
   font-weight: bold;                              /*  En negrita */
 }
 
-.card>h3, p{
+.card>h3,
+.card>p{
   margin-top: 5px;
   margin-left: 10px;
 }
@@ -390,8 +480,10 @@ a:hover .material-icons {
   z-index: 4;                                   /* La coloca por encima de otros elementos */
 }
 
+/*==================================================
+  CONTROL DE STOCK
+==================================================*/
 
-/* ESTILO DE CONTROL DE STOCK */
 .stock-control {
     position: relative;                         /* Indicamos una posicion relativa, para despues posicionar elementos hijos de forma absoluta */
     width: 50%;                               /* Definimos el ancho y el alto del contenedor */
@@ -404,7 +496,7 @@ a:hover .material-icons {
 }
 
 .stock-control>h2 {
-  font-size: 1.6rem;                    /* Al titulo de control de stock le damos un tamano relativamente grande */
+  font-size: 1.6rem;                    /* Al titulo de control de stock le damos un tamaño relativamente grande */
   font-weight: bold;                    /* En negrita */
   margin-bottom: 35px;                  /* Con un espacio inferior */
   color: var(--colorHeaderNav);
@@ -423,7 +515,7 @@ a:hover .material-icons {
   width: 20%;                                     /* Con anchos diferentes */
   content: attr(data-stock) " unidades";          /* Insertando el atributo de stock */
   align-items: center;                            /* centramos verticalmente */
-  justify-content: flex-end;                      /* Y horizontalmente tambien */
+  justify-content: center;                      /* Y horizontalmente tambien */
   text-align: end;                                /* con el texto al final de la barra */
   background-color: rgb(255, 67, 67);
   border: 1px solid black;
@@ -435,7 +527,7 @@ a:hover .material-icons {
   width: 50%;
   content: attr(data-stock) " unidades";
   align-items: center;
-  justify-content: flex-end;
+  justify-content: center;
   text-align: end;
   background-color: rgb(255, 255, 53);
   border: 1px solid black;
@@ -447,17 +539,25 @@ a:hover .material-icons {
   width: 90%;
   content: attr(data-stock) " unidades";
   align-items: center;
-  justify-content: flex-end;
+  justify-content: center;
   text-align: end;
   background-color: greenyellow;
   border: 1px solid black;
 }
 
 
-/* ESTILO DE COTIZACION DOLAR */
+/* ==================================================
+          PANEL DE COTIZACIÓN DEL DÓLAR
+==================================================*/
+
+/*  Se define el contenedor donde se muestra la cotización
+  y la animación de las barras que simulan la variación
+  del mercado. */
+
 .currency {
-  width: 35%;                                 /* Se define el ancho y el alto del contenedor */
+  width: 40%;                                 /* Se define el ancho y el alto del contenedor */
   height: 265px;
+  padding: 15px;
   text-align: left;
   font-size: 1.2rem;                            /* Con el titulo al mismo tamaño que control de stock */
   color: var(--colorHeaderNav);
@@ -487,10 +587,14 @@ a:hover .material-icons {
 }
 
 
-/* SIMULACIÓN FLUJO
-VERDE: DOLAR OFICIAL,
-AZUL: DOLAR BLUE,
-NEGRO: DOLAR MEP */
+/*==================================================
+  ANIMACIÓN DEL PANEL DE COTIZACIÓN
+==================================================*/
+
+/* Barras animadas:
+    Verde: Oficial
+    Azul: Blue
+    Negro: MEP */
 
 .loading{
     width: 200px;                           /* Definimos el ancho y el alto del contenedor */
@@ -508,7 +612,7 @@ NEGRO: DOLAR MEP */
 }
 
 .loading-item:nth-child(1) {      /* Y animamos a cada hijo */
-  animation-delay: 0.1s;          /* Generamos un delay antes de inicial la animacion */
+  animation-delay: 0.1s;          /* Generamos un delay antes de iniciar la animacion */
   background-color: green;      /* Con el delay generamos un orden de animacion para que no se muevan la 3 a la vez */
 }
 
@@ -523,19 +627,22 @@ NEGRO: DOLAR MEP */
 }
 
 @keyframes dolar {
-  0% {height: 30px;}          /* iniciamos con una barra pequeña verticalmente */
+  0% {height: 30px;}          /* Iniciamos con una barra pequeña verticalmente */
 
-  50% {height: 100px;}        /* La llemamos a su altura maxima a mitad de la animacion */
+  50% {height: 100px;}        /* La llevamos a su altura maxima a mitad de la animacion */
 
   100% {height: 30px;}        /* Y cuando llegue al fina volvemos a la misma altura que el inicio */
 }
 
 
-/*AYUDA EN LINEA*/
+/*==================================================
+  BOTÓN DE SOPORTE EN LÍNEA
+==================================================*/
+
 .contact-support{
     position:fixed;
-    right:15px;
-    bottom:15px;
+    right:130px;
+    bottom:30px;
     display:flex;
     align-items:center;
     gap:6px;
@@ -587,4 +694,120 @@ NEGRO: DOLAR MEP */
     text-align: center;                             /* Centramos horizontalmente el texto */
     background-color: var(--color-section);
     border-top: 3px solid var(--color-body);
+}
+
+
+/********************************************************************************/
+
+/* MEDIA QUERIES */
+
+/* DISEÑO RESPONSIVE - MEDIA QUERIES
+
+  En esta sección se adapta la interfaz para distintos
+  tamaños de pantalla sin modificar el HTML.
+
+  Se reorganizan los contenedores, se ajustan los anchos,
+  tamaños de texto y distribución de los elementos para
+  mantener una correcta visualización en computadoras,
+  tablets y teléfonos móviles. */
+
+
+
+/***********************************************
+/           TABLETS (hasta 1024px)             /
+***********************************************/
+
+/*  - Se reduce el ancho del menú lateral.
+    - Las secciones principales ocupan todo el ancho.
+    - Las tarjetas de ofertas pasan a dos columnas.
+    - Se ajustan las dimensiones de los paneles.  */
+
+@media (max-width:1024px){
+
+    :root{
+        --ancho-nav:180px;
+    }
+
+    .main-header > h1{
+        margin-left:32%;
+        font-size:1.6rem;
+    }
+
+    .activity,
+    .cards{
+        width:100%;
+    }
+
+    .stock-control{
+        width:60%;
+    }
+
+    .currency{
+        width:40%;
+        margin-left:0;
+    }
+
+    .exclusive-offers{
+        flex-wrap:wrap;
+    }
+
+    .art-offer{
+        flex:0 0 48%;
+        max-width:48%;
+      }
+}
+
+
+
+
+/***********************************************
+/                 CELULARES                    /
+***********************************************/
+
+/*  - Se disminuye el tamaño de la tipografía.
+    - Se reducen las dimensiones de las imágenes.
+    - Se adapta la tabla de actividad.
+    - Se ajusta el botón de ayuda.
+    - Se optimiza el espacio disponible en pantalla. */
+
+@media (max-width:480px){
+
+    html{
+        font-size:14px;
+    }
+
+    .main-header img{
+        width:120px;
+        height:auto;
+    }
+
+    .activity table{
+        font-size:.8rem;
+    }
+
+    .activity th,
+    .activity td{
+        padding:4px;
+    }
+
+    .exclusive-offers h2{
+        font-size:1rem;
+        padding:8px 15px;
+    }
+
+    .art-offer img{
+        width:90px;
+        height:90px;
+    }
+
+    .loading{
+        margin:auto;
+    }
+
+    .contact-support{
+        right:10px;
+        bottom:10px;
+        transform:scale(.9);
+    }
+
 }
